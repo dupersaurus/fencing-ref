@@ -13,6 +13,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //let phoneView = UINib(nibName: "iphone5", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! UIView;
+        //view = phoneView;
+        
+        let storyboard = UIStoryboard(name: "device4in", bundle: nil);
+        let deviceVC = storyboard.instantiateViewControllerWithIdentifier("boutVC") as! UIViewController;
+        var delegate:UIApplicationDelegate? = UIApplication.sharedApplication().delegate;
+        delegate?.window??.rootViewController = deviceVC;
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,33 +27,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Calls from the Bout
     
-    /**
-    Sets the score for the fencer on the left
-    
-    :score: The score to set
-    */
-    func setLeftScore(score iScore:UInt) {
-        
-    }
-    
-    /**
-    Sets the score for the fencer on the right
-    
-    :score: The score to set
-    */
-    func setRightScore(score iScore:UInt) {
-        
-    }
-    
-    /** 
-    Sets the current bout time
-    
-    :currentTime: The current time of the bout, in seconds
-    */
-    func setCurrentTime(currentTime fCurrentTime:Float) {
-        
-    }
 }
 
