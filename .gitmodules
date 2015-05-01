@@ -1,0 +1,3 @@
+[submodule "FencingRefSwift/fontawesome"]
+	path = FencingRefSwift/fontawesome
+	url = https://github.com/alexdrone/ios-fontawesome.git
