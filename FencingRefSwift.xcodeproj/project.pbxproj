@@ -53,7 +53,7 @@
 		296B14671AF3F7AD00A3CAAB /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FontAwesome.h"; path = "fontawesome/UIImage+FontAwesome.h"; sourceTree = "<group>"; };
 		296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FontAwesome.m"; path = "fontawesome/UIImage+FontAwesome.m"; sourceTree = "<group>"; };
 		296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = fontawesome/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
-		296B14721AF43A4900A3CAAB /* FencingRefSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FencingRefSwift-Bridging-Header.h"; path = "fontawesome/FencingRefSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FencingRefSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		29C94F301AE3F34400584FCF /* FencingRefSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FencingRefSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C94F341AE3F34400584FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C94F351AE3F34400584FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,7 +86,6 @@
 		296B145E1AF3F79A00A3CAAB /* fontawesome */ = {
 			isa = PBXGroup;
 			children = (
-				296B14721AF43A4900A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 				296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */,
 				296B145F1AF3F7AD00A3CAAB /* FAImageView.h */,
 				296B14601AF3F7AD00A3CAAB /* FAImageView.m */,
@@ -134,6 +133,7 @@
 				296B14451AE4879900A3CAAB /* Bout.swift */,
 				296B144D1AED226700A3CAAB /* BoutViewController.swift */,
 				296B14511AED2FD300A3CAAB /* device4in.storyboard */,
+				296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 			);
 			path = FencingRefSwift;
 			sourceTree = "<group>";
@@ -409,7 +409,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "FencingRefSwift/fontawesome/FencingRefSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FencingRefSwift/FencingRefSwift-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -423,7 +423,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "FencingRefSwift/fontawesome/FencingRefSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FencingRefSwift/FencingRefSwift-Bridging-Header.h";
 			};
 			name = Release;
 		};
