@@ -49,6 +49,10 @@ public class Bout {
         m_boutEvents = [BoutEvent]();
         
         m_timer = Timer(countdownFrom: fTime, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerFinish);
+        
+        vc.setCurrentTime(currentTime: fTime);
+        vc.setLeftScore(score: 0);
+        vc.setRightScore(score: 0);
     }
     
     /** Begin running the timer */
@@ -59,6 +63,14 @@ public class Bout {
     /** Stop the timer */
     public func halt() {
         m_timer?.stop();
+    }
+    
+    public func toggleTimer() {
+        if m_timer!.isRunning() {
+            m_timer?.stop();
+        } else {
+            m_timer?.start();
+        }
     }
     
     /** 

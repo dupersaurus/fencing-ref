@@ -88,6 +88,10 @@ public class Timer : NSObject {
         m_timer?.invalidate();
     }
     
+    public func isRunning() -> Bool {
+        return m_timer != nil;
+    }
+    
     func timerTick(timer:NSTimer) {
         if (m_bTickUp) {
             m_fTime += Float(m_fTickInterval);
@@ -102,5 +106,33 @@ public class Timer : NSObject {
                 m_cbFinish?();
             }
         }
+    }
+    
+    static public func getTimeString(timeInSeconds fTime:Float) -> String {
+        var sReturnString = "";
+        let iHours = floor(fTime / 3600);
+        let iMinutes = floor(fTime / 60);
+        let fSeconds = fTime % 60;
+        
+        let sMinutesString:String = iMinutes > 9 ? "\(iMinutes)" : "0\(iMinutes)";
+        let sSecondsString:String;
+        
+        if (fSeconds > 9) {
+            sSecondsString = "\(floor(fSeconds))";
+        } else if (fTime < 10) {
+            sSecondsString = "\(fSeconds)";
+        } else {
+            sSecondsString = "0\(floor(fSeconds))";
+        }
+        
+        if iHours > 0 {
+            sReturnString = "\(iHours):\(sMinutesString).\(sSecondsString)";
+        } else if iMinutes > 0 {
+            sReturnString = "\(sMinutesString).\(sSecondsString)";
+        } else {
+            sReturnString = sSecondsString;
+        }
+        
+        return sReturnString;
     }
 }

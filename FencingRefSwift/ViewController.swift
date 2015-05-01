@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent;
+        
         //let phoneView = UINib(nibName: "iphone5", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! UIView;
         //view = phoneView;
         
@@ -20,6 +22,12 @@ class ViewController: UIViewController {
         let deviceVC = storyboard.instantiateViewControllerWithIdentifier("boutVC") as! UIViewController;
         var delegate:UIApplicationDelegate? = UIApplication.sharedApplication().delegate;
         delegate?.window??.rootViewController = deviceVC;
+        
+        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
     }
 
     override func didReceiveMemoryWarning() {

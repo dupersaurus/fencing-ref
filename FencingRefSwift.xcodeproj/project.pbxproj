@@ -11,10 +11,17 @@
 		296B14481AE489D000A3CAAB /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14471AE489D000A3CAAB /* Timer.swift */; };
 		296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B144D1AED226700A3CAAB /* BoutViewController.swift */; };
 		296B14521AED2FD300A3CAAB /* device4in.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 296B14511AED2FD300A3CAAB /* device4in.storyboard */; };
+		296B145D1AF3F77400A3CAAB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296B145C1AF3F77400A3CAAB /* Images.xcassets */; };
+		296B14691AF3F7AD00A3CAAB /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14601AF3F7AD00A3CAAB /* FAImageView.m */; };
+		296B146A1AF3F7AD00A3CAAB /* FontAwesome+iOS.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 296B14611AF3F7AD00A3CAAB /* FontAwesome+iOS.podspec */; };
+		296B146B1AF3F7AD00A3CAAB /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14631AF3F7AD00A3CAAB /* NSString+FontAwesome.m */; };
+		296B146C1AF3F7AD00A3CAAB /* String+FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14641AF3F7AD00A3CAAB /* String+FontAwesome.swift */; };
+		296B146D1AF3F7AD00A3CAAB /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14661AF3F7AD00A3CAAB /* UIFont+FontAwesome.m */; };
+		296B146E1AF3F7AD00A3CAAB /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */; };
+		296B14701AF3F7BE00A3CAAB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */; };
 		29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F351AE3F34400584FCF /* AppDelegate.swift */; };
 		29C94F381AE3F34400584FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F371AE3F34400584FCF /* ViewController.swift */; };
 		29C94F3B1AE3F34400584FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C94F391AE3F34400584FCF /* Main.storyboard */; };
-		29C94F3D1AE3F34400584FCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29C94F3C1AE3F34400584FCF /* Images.xcassets */; };
 		29C94F401AE3F34400584FCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C94F3E1AE3F34400584FCF /* LaunchScreen.xib */; };
 		29C94F4C1AE3F34400584FCF /* FencingRefSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F4B1AE3F34400584FCF /* FencingRefSwiftTests.swift */; };
 /* End PBXBuildFile section */
@@ -34,12 +41,24 @@
 		296B14471AE489D000A3CAAB /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		296B144D1AED226700A3CAAB /* BoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutViewController.swift; sourceTree = "<group>"; };
 		296B14511AED2FD300A3CAAB /* device4in.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = device4in.storyboard; sourceTree = "<group>"; };
+		296B145C1AF3F77400A3CAAB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		296B145F1AF3F7AD00A3CAAB /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FAImageView.h; path = fontawesome/FAImageView.h; sourceTree = "<group>"; };
+		296B14601AF3F7AD00A3CAAB /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FAImageView.m; path = fontawesome/FAImageView.m; sourceTree = "<group>"; };
+		296B14611AF3F7AD00A3CAAB /* FontAwesome+iOS.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "FontAwesome+iOS.podspec"; path = "fontawesome/FontAwesome+iOS.podspec"; sourceTree = "<group>"; };
+		296B14621AF3F7AD00A3CAAB /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+FontAwesome.h"; path = "fontawesome/NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		296B14631AF3F7AD00A3CAAB /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+FontAwesome.m"; path = "fontawesome/NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		296B14641AF3F7AD00A3CAAB /* String+FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+FontAwesome.swift"; path = "fontawesome/String+FontAwesome.swift"; sourceTree = "<group>"; };
+		296B14651AF3F7AD00A3CAAB /* UIFont+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+FontAwesome.h"; path = "fontawesome/UIFont+FontAwesome.h"; sourceTree = "<group>"; };
+		296B14661AF3F7AD00A3CAAB /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+FontAwesome.m"; path = "fontawesome/UIFont+FontAwesome.m"; sourceTree = "<group>"; };
+		296B14671AF3F7AD00A3CAAB /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FontAwesome.h"; path = "fontawesome/UIImage+FontAwesome.h"; sourceTree = "<group>"; };
+		296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FontAwesome.m"; path = "fontawesome/UIImage+FontAwesome.m"; sourceTree = "<group>"; };
+		296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = fontawesome/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		296B14721AF43A4900A3CAAB /* FencingRefSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FencingRefSwift-Bridging-Header.h"; path = "fontawesome/FencingRefSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		29C94F301AE3F34400584FCF /* FencingRefSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FencingRefSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C94F341AE3F34400584FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C94F351AE3F34400584FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29C94F371AE3F34400584FCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29C94F3A1AE3F34400584FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		29C94F3C1AE3F34400584FCF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29C94F3F1AE3F34400584FCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		29C94F451AE3F34400584FCF /* FencingRefSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FencingRefSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C94F4A1AE3F34400584FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +83,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		296B145E1AF3F79A00A3CAAB /* fontawesome */ = {
+			isa = PBXGroup;
+			children = (
+				296B14721AF43A4900A3CAAB /* FencingRefSwift-Bridging-Header.h */,
+				296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */,
+				296B145F1AF3F7AD00A3CAAB /* FAImageView.h */,
+				296B14601AF3F7AD00A3CAAB /* FAImageView.m */,
+				296B14611AF3F7AD00A3CAAB /* FontAwesome+iOS.podspec */,
+				296B14621AF3F7AD00A3CAAB /* NSString+FontAwesome.h */,
+				296B14631AF3F7AD00A3CAAB /* NSString+FontAwesome.m */,
+				296B14641AF3F7AD00A3CAAB /* String+FontAwesome.swift */,
+				296B14651AF3F7AD00A3CAAB /* UIFont+FontAwesome.h */,
+				296B14661AF3F7AD00A3CAAB /* UIFont+FontAwesome.m */,
+				296B14671AF3F7AD00A3CAAB /* UIImage+FontAwesome.h */,
+				296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */,
+			);
+			name = fontawesome;
+			sourceTree = "<group>";
+		};
 		29C94F271AE3F34400584FCF = {
 			isa = PBXGroup;
 			children = (
@@ -85,10 +123,11 @@
 		29C94F321AE3F34400584FCF /* FencingRefSwift */ = {
 			isa = PBXGroup;
 			children = (
+				296B145E1AF3F79A00A3CAAB /* fontawesome */,
+				296B145C1AF3F77400A3CAAB /* Images.xcassets */,
 				29C94F351AE3F34400584FCF /* AppDelegate.swift */,
 				29C94F371AE3F34400584FCF /* ViewController.swift */,
 				29C94F391AE3F34400584FCF /* Main.storyboard */,
-				29C94F3C1AE3F34400584FCF /* Images.xcassets */,
 				29C94F3E1AE3F34400584FCF /* LaunchScreen.xib */,
 				29C94F331AE3F34400584FCF /* Supporting Files */,
 				296B14471AE489D000A3CAAB /* Timer.swift */,
@@ -173,6 +212,7 @@
 				TargetAttributes = {
 					29C94F2F1AE3F34400584FCF = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = JHQ77B32C2;
 					};
 					29C94F441AE3F34400584FCF = {
 						CreatedOnToolsVersion = 6.3;
@@ -205,9 +245,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				29C94F3B1AE3F34400584FCF /* Main.storyboard in Resources */,
+				296B14701AF3F7BE00A3CAAB /* FontAwesome.ttf in Resources */,
+				296B146A1AF3F7AD00A3CAAB /* FontAwesome+iOS.podspec in Resources */,
+				296B145D1AF3F77400A3CAAB /* Images.xcassets in Resources */,
 				296B14521AED2FD300A3CAAB /* device4in.storyboard in Resources */,
 				29C94F401AE3F34400584FCF /* LaunchScreen.xib in Resources */,
-				29C94F3D1AE3F34400584FCF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,11 +267,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296B146B1AF3F7AD00A3CAAB /* NSString+FontAwesome.m in Sources */,
 				296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */,
 				29C94F381AE3F34400584FCF /* ViewController.swift in Sources */,
 				29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */,
+				296B14691AF3F7AD00A3CAAB /* FAImageView.m in Sources */,
+				296B146C1AF3F7AD00A3CAAB /* String+FontAwesome.swift in Sources */,
 				296B14461AE4879900A3CAAB /* Bout.swift in Sources */,
 				296B14481AE489D000A3CAAB /* Timer.swift in Sources */,
+				296B146E1AF3F7AD00A3CAAB /* UIImage+FontAwesome.m in Sources */,
+				296B146D1AF3F7AD00A3CAAB /* UIFont+FontAwesome.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +403,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FencingRefSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FencingRefSwift/fontawesome/FencingRefSwift-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -366,9 +417,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FencingRefSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "FencingRefSwift/fontawesome/FencingRefSwift-Bridging-Header.h";
 			};
 			name = Release;
 		};
