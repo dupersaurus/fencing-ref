@@ -86,6 +86,15 @@ public class Timer : NSObject {
     /** Stop the timer */
     public func stop() {
         m_timer?.invalidate();
+        m_timer = nil;
+    }
+    
+    public func toggle() {
+        if (m_timer == nil) {
+            start();
+        } else {
+            stop();
+        }
     }
     
     public func isRunning() -> Bool {
@@ -110,25 +119,27 @@ public class Timer : NSObject {
     
     static public func getTimeString(timeInSeconds fTime:Float) -> String {
         var sReturnString = "";
-        let iHours = floor(fTime / 3600);
-        let iMinutes = floor(fTime / 60);
+        let iHours:UInt = UInt(floor(fTime / 3600));
+        let iMinutes:UInt = UInt(floor(fTime / 60));
         let fSeconds = fTime % 60;
         
-        let sMinutesString:String = iMinutes > 9 ? "\(iMinutes)" : "0\(iMinutes)";
+        let sMinutesString:String = iHours > 0 && iMinutes < 10 ? "0\(iMinutes)" : "\(iMinutes)";
         let sSecondsString:String;
         
-        if (fSeconds > 9) {
-            sSecondsString = "\(floor(fSeconds))";
+        if (fSeconds >= 10) {
+            sSecondsString = "\(UInt(floor(fSeconds)))";
         } else if (fTime < 10) {
-            sSecondsString = "\(fSeconds)";
+            sSecondsString = String(format: "%.1f", fSeconds);
         } else {
-            sSecondsString = "0\(floor(fSeconds))";
+            sSecondsString = "0\(UInt(floor(fSeconds)))";
         }
         
         if iHours > 0 {
             sReturnString = "\(iHours):\(sMinutesString).\(sSecondsString)";
         } else if iMinutes > 0 {
-            sReturnString = "\(sMinutesString).\(sSecondsString)";
+            sReturnString = "\(sMinutesString):\(sSecondsString)";
+        } else if (fTime > 10) {
+            sReturnString = "0:\(sSecondsString)";
         } else {
             sReturnString = sSecondsString;
         }

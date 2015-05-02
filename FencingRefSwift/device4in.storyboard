@@ -25,43 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poT-eu-31G" userLabel="Time">
-                                <rect key="frame" x="16" y="131" width="288" height="147"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="140"/>
-                                <state key="normal" title="0:00">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startTimer:" destination="gfm-lB-8qY" eventType="touchUpInside" id="6J9-gs-hFp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9OR-NG-OXl" userLabel="Left Score">
-                                <rect key="frame" x="16" y="324" width="115" height="120"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812986998839" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrementFencerLeft:" destination="gfm-lB-8qY" eventType="touchDownRepeat" id="ykF-P2-gKM"/>
-                                    <action selector="scoreFencerLeft:" destination="gfm-lB-8qY" eventType="touchUpInside" id="Mlp-Rv-Off"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbl-xP-Orl" userLabel="Right Score">
-                                <rect key="frame" x="191" y="324" width="115" height="120"/>
-                                <color key="backgroundColor" red="0.12957360202281781" green="0.80305003156565657" blue="0.10748053588926411" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrementFencerRight:" destination="gfm-lB-8qY" eventType="touchDownRepeat" id="NiZ-ed-XuP"/>
-                                    <action selector="scoreFencerRight:" destination="gfm-lB-8qY" eventType="touchUpInside" id="GrJ-Qc-PCM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iG-hK-J3l" userLabel="Double Touch">
                                 <rect key="frame" x="137" y="334" width="46" height="98"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
@@ -151,8 +114,43 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-n2-zfM" userLabel="Time Label">
+                                <rect key="frame" x="0.0" y="128" width="320" height="170"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="140"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0Bi-5e-LQZ" appends="YES" id="xKW-Qn-9sP"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sev-mm-k1U" userLabel="Left Score">
+                                <rect key="frame" x="16" y="324" width="115" height="120"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="D4B-tN-fWN" appends="YES" id="Myl-AN-txc"/>
+                                    <outletCollection property="gestureRecognizers" destination="pYs-2h-pvs" appends="YES" id="JgA-l3-vzL"/>
+                                </connections>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUy-du-4KB" userLabel="Right Score">
+                                <rect key="frame" x="189" y="324" width="115" height="120"/>
+                                <color key="backgroundColor" red="0.12957360200000001" green="0.80305003159999999" blue="0.10748053589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SeX-eI-3Jj" appends="YES" id="Pxv-1x-Tj7"/>
+                                    <outletCollection property="gestureRecognizers" destination="lEh-57-nal" appends="YES" id="cWn-iw-s90"/>
+                                </connections>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -160,12 +158,42 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="m_leftScoreBtn" destination="9OR-NG-OXl" id="Vkm-Fy-hHm"/>
-                        <outlet property="m_rightScoreBtn" destination="cbl-xP-Orl" id="C0T-RQ-cfJ"/>
-                        <outlet property="m_timerButton" destination="poT-eu-31G" id="qVx-r6-oal"/>
+                        <outlet property="m_doubleTapLeftGesture" destination="pYs-2h-pvs" id="Tfl-hz-ABN"/>
+                        <outlet property="m_doubleTapRightGesture" destination="lEh-57-nal" id="Cnf-xy-5xk"/>
+                        <outlet property="m_leftScoreLabel" destination="Sev-mm-k1U" id="JU3-7q-BOq"/>
+                        <outlet property="m_rightScoreLabel" destination="sUy-du-4KB" id="1rv-0A-lOX"/>
+                        <outlet property="m_tapLeftGesture" destination="D4B-tN-fWN" id="wjz-IG-RhI"/>
+                        <outlet property="m_tapRightGesture" destination="SeX-eI-3Jj" id="hH4-KZ-ykq"/>
+                        <outlet property="m_tapTimerGesture" destination="0Bi-5e-LQZ" id="QRb-7Z-L4Y"/>
+                        <outlet property="m_timerLabel" destination="c7R-n2-zfM" id="zSg-nV-nsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4Y-Ud-xqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0Bi-5e-LQZ" userLabel="Timer">
+                    <connections>
+                        <action selector="toggleTimer:" destination="gfm-lB-8qY" id="nYM-iA-Fgm"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="D4B-tN-fWN" userLabel="Left Score">
+                    <connections>
+                        <action selector="tapLeftScore:" destination="gfm-lB-8qY" id="dOj-tS-3Sa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="SeX-eI-3Jj" userLabel="Right Score">
+                    <connections>
+                        <action selector="tapRightScore:" destination="gfm-lB-8qY" id="Oas-3w-ydq"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="pYs-2h-pvs" userLabel="Left Score Double">
+                    <connections>
+                        <action selector="doubleTapLeftScore:" destination="gfm-lB-8qY" id="itq-dj-1gG"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="lEh-57-nal" userLabel="Right Double Score">
+                    <connections>
+                        <action selector="doubleTapRightScore:" destination="gfm-lB-8qY" id="zHD-Fv-Uq7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="322" y="375"/>
         </scene>

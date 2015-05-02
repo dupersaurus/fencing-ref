@@ -66,11 +66,7 @@ public class Bout {
     }
     
     public func toggleTimer() {
-        if m_timer!.isRunning() {
-            m_timer?.stop();
-        } else {
-            m_timer?.start();
-        }
+        m_timer?.toggle();
     }
     
     /** 
@@ -83,6 +79,14 @@ public class Bout {
         recordBoutEvent("Left scores");
     }
     
+    public func reverseTouchLeft() {
+        if m_iLeftScore > 0 {
+            m_iLeftScore--;
+        }
+        
+        m_viewController.setLeftScore(score: m_iLeftScore);
+    }
+    
     /** 
     Score touch for fencer on the right 
     */
@@ -91,6 +95,14 @@ public class Bout {
         m_viewController.setRightScore(score: m_iRightScore);
         
         recordBoutEvent("Right scores");
+    }
+    
+    public func reverseTouchRight() {
+        if m_iRightScore > 0 {
+            m_iRightScore--;
+        }
+        
+        m_viewController.setRightScore(score: m_iRightScore);
     }
     
     /** 

@@ -12,11 +12,26 @@ import UIKit
 class BoutViewController: UIViewController {
     
     /** Label displaying the current bout time */
-    @IBOutlet weak var m_timerButton: UIButton!
+    @IBOutlet weak var m_timerLabel: UILabel!
     
-    @IBOutlet weak var m_leftScoreBtn: UIButton!
-    @IBOutlet weak var m_rightScoreBtn: UIButton!
+    /** Label with fotl's score */
+    @IBOutlet weak var m_leftScoreLabel: UILabel!
     
+    /** Label with fotr's score */
+    @IBOutlet weak var m_rightScoreLabel: UILabel!
+    
+    /** Single-tap gesture for the timer */
+    @IBOutlet var m_tapTimerGesture: UITapGestureRecognizer!
+    
+    /** Single-tap gesture for left score */
+    @IBOutlet var m_tapLeftGesture: UITapGestureRecognizer!
+    
+    /** Single-tap gesture for right score */
+    @IBOutlet var m_tapRightGesture: UITapGestureRecognizer!
+    
+    @IBOutlet var m_doubleTapLeftGesture: UITapGestureRecognizer!
+    
+    @IBOutlet var m_doubleTapRightGesture: UITapGestureRecognizer!
     /** The active bout */
     var m_bout:Bout?;
     
@@ -24,7 +39,18 @@ class BoutViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        m_bout = Bout(boutTime: 300, view: self);
+        m_bout = Bout(boutTime: 15, view: self);
+        
+        /*m_timerLabel.addGestureRecognizer(m_tapTimerGesture);
+        m_leftScoreLabel.addGestureRecognizer(m_tapLeftGesture);
+        m_rightScoreLabel.addGestureRecognizer(m_tapRightGesture);*/
+        
+        m_timerLabel.userInteractionEnabled = true;
+        m_leftScoreLabel.userInteractionEnabled = true;
+        m_rightScoreLabel.userInteractionEnabled = true;
+        
+        m_tapLeftGesture.requireGestureRecognizerToFail(m_doubleTapLeftGesture);
+        m_tapRightGesture.requireGestureRecognizerToFail(m_doubleTapRightGesture);
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -34,27 +60,43 @@ class BoutViewController: UIViewController {
     // MARK: - User interaction
     
     /** Start running the bout timer */
-    @IBAction func startTimer(sender: UIButton) {
+    @IBAction func toggleTimer(sender: UITapGestureRecognizer) {
         m_bout?.toggleTimer();
     }
     
+    @IBAction func tapLeftScore(sender: UITapGestureRecognizer) {
+        scoreFencerLeft();
+    }
+    
+    @IBAction func tapRightScore(sender: UITapGestureRecognizer) {
+        scoreFencerRight();
+    }
+    
+    @IBAction func doubleTapLeftScore(sender: UITapGestureRecognizer) {
+        m_bout?.reverseTouchLeft();
+    }
+    
+    @IBAction func doubleTapRightScore(sender: UITapGestureRecognizer) {
+        m_bout?.reverseTouchRight();
+    }
+    
     /** Score a touch for fencer on the left */
-    @IBAction func scoreFencerLeft(sender: UIButton) {
+    func scoreFencerLeft() {
         m_bout?.touchLeft();
     }
     
     /** Decrement the score of fencer on the left */
-    @IBAction func decrementFencerLeft(sender: AnyObject) {
+    func decrementFencerLeft() {
         
     }
     
     /** Score a touch for fencer on the right */
-    @IBAction func scoreFencerRight(sender: UIButton) {
+    func scoreFencerRight() {
         m_bout?.touchRight();
     }
     
     /** Decrement the score of fencer on the right */
-    @IBAction func decrementFencerRight(sender: UIButton) {
+    func decrementFencerRight() {
         
     }
     
@@ -71,7 +113,7 @@ class BoutViewController: UIViewController {
     :score: The score to set
     */
     func setLeftScore(score iScore:UInt8) {
-        m_leftScoreBtn.titleLabel?.text = "\(iScore)";
+        m_leftScoreLabel.text = "\(iScore)";
     }
     
     /**
@@ -80,7 +122,7 @@ class BoutViewController: UIViewController {
     :score: The score to set
     */
     func setRightScore(score iScore:UInt8) {
-        m_rightScoreBtn.titleLabel?.text = "\(iScore)";
+        m_rightScoreLabel.text = "\(iScore)";
     }
     
     /**
@@ -89,7 +131,7 @@ class BoutViewController: UIViewController {
     :currentTime: The current time of the bout, in seconds
     */
     func setCurrentTime(currentTime fCurrentTime:Float) {
-        m_timerButton.titleLabel?.text = Timer.getTimeString(timeInSeconds: fCurrentTime);
+        m_timerLabel?.text = Timer.getTimeString(timeInSeconds: fCurrentTime);
     }
     
     /** Alert the user with a buzz and sound */
