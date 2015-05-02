@@ -130,6 +130,7 @@ public class Bout {
     /** Called by the timer when completed. */
     func onTimerFinish() {
         m_viewController.setCurrentTime(currentTime: 0);
+        m_viewController.stopTimer();
     }
     
     /** 

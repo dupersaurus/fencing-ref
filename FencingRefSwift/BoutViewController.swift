@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AudioToolbox
 
 class BoutViewController: UIViewController {
     
@@ -32,8 +33,12 @@ class BoutViewController: UIViewController {
     @IBOutlet var m_doubleTapLeftGesture: UITapGestureRecognizer!
     
     @IBOutlet var m_doubleTapRightGesture: UITapGestureRecognizer!
+    
     /** The active bout */
     var m_bout:Bout?;
+    
+    /** The modal screen used when running the timer */
+    var m_boutTimerModal:BoutTimerViewController?;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,11 +62,11 @@ class BoutViewController: UIViewController {
         return UIStatusBarStyle.LightContent;
     }
     
-    // MARK: - User interaction
+    // MARK: - View controller interface
     
     /** Start running the bout timer */
     @IBAction func toggleTimer(sender: UITapGestureRecognizer) {
-        m_bout?.toggleTimer();
+        startTimer();
     }
     
     @IBAction func tapLeftScore(sender: UITapGestureRecognizer) {
@@ -73,36 +78,64 @@ class BoutViewController: UIViewController {
     }
     
     @IBAction func doubleTapLeftScore(sender: UITapGestureRecognizer) {
-        m_bout?.reverseTouchLeft();
+        decrementFencerLeft();
     }
     
     @IBAction func doubleTapRightScore(sender: UITapGestureRecognizer) {
-        m_bout?.reverseTouchRight();
+        decrementFencerRight();
+    }
+    
+    /** Score a touch for both fencers */
+    @IBAction func tapDoubleTouch(sender: UIButton) {
+        scoreDoubleTouch();
+    }
+    
+    // MARK: - Input handlers
+    
+    func startTimer() {
+        if (m_boutTimerModal == nil) {
+            m_boutTimerModal = self.storyboard!.instantiateViewControllerWithIdentifier("runningTimer") as? BoutTimerViewController;
+            m_boutTimerModal?.setHaltCallback(stopTimer);
+        }
+        
+        presentViewController(m_boutTimerModal!, animated: false, completion: nil);
+        
+        m_bout?.start();
+        alert();
+    }
+    
+    func stopTimer() {
+        dismissViewControllerAnimated(false, completion: nil);
+        
+        m_bout?.halt();
+        alert();
     }
     
     /** Score a touch for fencer on the left */
     func scoreFencerLeft() {
         m_bout?.touchLeft();
+        alert();
     }
     
     /** Decrement the score of fencer on the left */
     func decrementFencerLeft() {
-        
+        m_bout?.reverseTouchLeft();
     }
     
     /** Score a touch for fencer on the right */
     func scoreFencerRight() {
         m_bout?.touchRight();
+        alert();
     }
     
     /** Decrement the score of fencer on the right */
     func decrementFencerRight() {
-        
+        m_bout?.reverseTouchRight();
     }
     
-    /** Score a touch for both fencers */
-    @IBAction func scoreDoubleTouch(sender: UIButton) {
+    func scoreDoubleTouch() {
         m_bout?.touchDouble();
+        alert();
     }
     
     // MARK: - Calls from the Bout
@@ -132,10 +165,11 @@ class BoutViewController: UIViewController {
     */
     func setCurrentTime(currentTime fCurrentTime:Float) {
         m_timerLabel?.text = Timer.getTimeString(timeInSeconds: fCurrentTime);
+        m_boutTimerModal?.setBoutTime(fCurrentTime);
     }
     
     /** Alert the user with a buzz and sound */
     func alert() {
-        
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 }

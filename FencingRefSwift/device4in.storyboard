@@ -33,7 +33,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="scoreDoubleTouch:" destination="gfm-lB-8qY" eventType="touchUpInside" id="oTI-7W-AsF"/>
+                                    <action selector="tapDoubleTouch:" destination="gfm-lB-8qY" eventType="touchUpInside" id="2ME-KI-hq1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-nk-hs9" userLabel="New Bout">
@@ -196,6 +196,52 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="322" y="375"/>
+        </scene>
+        <!--Bout Timer View Controller-->
+        <scene sceneID="xE2-3c-rne">
+            <objects>
+                <viewController storyboardIdentifier="runningTimer" id="kdW-L4-KY9" customClass="BoutTimerViewController" customModule="FencingRefSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MmG-uc-tTd"/>
+                        <viewControllerLayoutGuide type="bottom" id="wdh-nf-03m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jgc-bs-XZX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ir-7G-OdA" userLabel="Time Label">
+                                <rect key="frame" x="0.0" y="128" width="320" height="170"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="140"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap Anywhere to Halt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDk-uJ-qwq">
+                                <rect key="frame" x="27" y="356" width="267" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VYy-p2-en2" appends="YES" id="A56-1A-SR9"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="m_timerLabel" destination="8ir-7G-OdA" id="Vt6-lk-3Fp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXZ-OF-cFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="VYy-p2-en2">
+                    <connections>
+                        <action selector="stopTimer:" destination="kdW-L4-KY9" id="oif-eW-HNZ"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="825" y="204"/>
         </scene>
     </scenes>
 </document>

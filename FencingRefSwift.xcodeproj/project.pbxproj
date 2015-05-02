@@ -19,6 +19,7 @@
 		296B146D1AF3F7AD00A3CAAB /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14661AF3F7AD00A3CAAB /* UIFont+FontAwesome.m */; };
 		296B146E1AF3F7AD00A3CAAB /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */; };
 		296B14701AF3F7BE00A3CAAB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */; };
+		299F32821AF539B200BD5AB0 /* BoutTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */; };
 		29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F351AE3F34400584FCF /* AppDelegate.swift */; };
 		29C94F381AE3F34400584FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F371AE3F34400584FCF /* ViewController.swift */; };
 		29C94F3B1AE3F34400584FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C94F391AE3F34400584FCF /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FontAwesome.m"; path = "fontawesome/UIImage+FontAwesome.m"; sourceTree = "<group>"; };
 		296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = fontawesome/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
 		296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FencingRefSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutTimerViewController.swift; sourceTree = "<group>"; };
 		29C94F301AE3F34400584FCF /* FencingRefSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FencingRefSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C94F341AE3F34400584FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C94F351AE3F34400584FCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				296B14471AE489D000A3CAAB /* Timer.swift */,
 				296B14451AE4879900A3CAAB /* Bout.swift */,
 				296B144D1AED226700A3CAAB /* BoutViewController.swift */,
+				299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */,
 				296B14511AED2FD300A3CAAB /* device4in.storyboard */,
 				296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 			);
@@ -272,6 +275,7 @@
 				29C94F381AE3F34400584FCF /* ViewController.swift in Sources */,
 				29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */,
 				296B14691AF3F7AD00A3CAAB /* FAImageView.m in Sources */,
+				299F32821AF539B200BD5AB0 /* BoutTimerViewController.swift in Sources */,
 				296B146C1AF3F7AD00A3CAAB /* String+FontAwesome.swift in Sources */,
 				296B14461AE4879900A3CAAB /* Bout.swift in Sources */,
 				296B14481AE489D000A3CAAB /* Timer.swift in Sources */,
