@@ -12,11 +12,17 @@ import Foundation
 public class Timer : NSObject {
     
     /** The current time, in seconds */
-    var m_fTime:Float;
+    private var m_fTime:Float;
     
     /** The current value of the timer */
     var currentTime:Float {
-        return m_fTime;
+        get {
+            return m_fTime;
+        }
+        
+        set {
+            m_fTime = newValue;
+        }
     }
     
     /** Whether the timer is ticking up (true) or down (false) */

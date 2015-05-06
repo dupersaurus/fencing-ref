@@ -21,6 +21,14 @@ class BoutViewController: UIViewController {
     /** Label with fotr's score */
     @IBOutlet weak var m_rightScoreLabel: UILabel!
     
+    @IBOutlet weak var m_leftYellowCard: UIButton!
+    @IBOutlet weak var m_leftRedCard: UIButton!
+    @IBOutlet weak var m_leftCurrentCard: UIView!
+    
+    @IBOutlet weak var m_rightYellowCard: UIButton!
+    @IBOutlet weak var m_rightRedCard: UIButton!
+    @IBOutlet weak var m_rightCurrentCard: UIView!
+    
     /** Single-tap gesture for the timer */
     @IBOutlet var m_tapTimerGesture: UITapGestureRecognizer!
     
@@ -44,7 +52,7 @@ class BoutViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        m_bout = Bout(boutTime: 15, view: self);
+        m_bout = Bout(boutTime: 180, view: self);
         
         /*m_timerLabel.addGestureRecognizer(m_tapTimerGesture);
         m_leftScoreLabel.addGestureRecognizer(m_tapLeftGesture);
@@ -56,6 +64,13 @@ class BoutViewController: UIViewController {
         
         m_tapLeftGesture.requireGestureRecognizerToFail(m_doubleTapLeftGesture);
         m_tapRightGesture.requireGestureRecognizerToFail(m_doubleTapRightGesture);
+        
+        m_leftCurrentCard.layer.borderColor = UIColor.whiteColor().CGColor;
+        m_leftCurrentCard.layer.borderWidth = 1;
+        m_leftCurrentCard.layer.cornerRadius = 5;
+        m_rightCurrentCard.layer.borderColor = UIColor.whiteColor().CGColor;
+        m_rightCurrentCard.layer.borderWidth = 1;
+        m_rightCurrentCard.layer.cornerRadius = 5;
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -88,6 +103,10 @@ class BoutViewController: UIViewController {
     /** Score a touch for both fencers */
     @IBAction func tapDoubleTouch(sender: UIButton) {
         scoreDoubleTouch();
+    }
+    
+    @IBAction func resetBout(sender: UIButton) {
+        resetCurrentBout();
     }
     
     // MARK: - Input handlers
@@ -136,6 +155,10 @@ class BoutViewController: UIViewController {
     func scoreDoubleTouch() {
         m_bout?.touchDouble();
         alert();
+    }
+    
+    func resetCurrentBout() {
+        m_bout?.resetToDefault();
     }
     
     // MARK: - Calls from the Bout

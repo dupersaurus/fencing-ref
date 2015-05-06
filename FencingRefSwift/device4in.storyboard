@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FontAwesome.ttf">
@@ -54,6 +54,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetBout:" destination="gfm-lB-8qY" eventType="touchUpInside" id="kDn-70-J5q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpG-09-9Et" userLabel="Medical Time Out">
                                 <rect key="frame" x="263" y="49" width="50" height="49"/>
@@ -80,38 +83,6 @@
                                 <state key="normal" title="">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-9q-oGQ" userLabel="FotL Yellow">
-                                <rect key="frame" x="26" y="469" width="40" height="62"/>
-                                <color key="backgroundColor" red="0.96111505681818177" green="0.94732479075214304" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="YL">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqD-1d-GqV" userLabel="FotL Red">
-                                <rect key="frame" x="79" y="469" width="40" height="62"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="RL">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-c2-jra" userLabel="FotR Yellow" colorLabel="IBBuiltInLabel-Yellow">
-                                <rect key="frame" x="202" y="469" width="40" height="62"/>
-                                <color key="backgroundColor" red="0.96111505679999998" green="0.94732479079999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="YR">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-pe-Kp4" userLabel="FotR Red">
-                                <rect key="frame" x="255" y="469" width="40" height="62"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="RR">
-                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-n2-zfM" userLabel="Time Label">
@@ -148,6 +119,46 @@
                                     <outletCollection property="gestureRecognizers" destination="lEh-57-nal" appends="YES" id="cWn-iw-s90"/>
                                 </connections>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPs-oR-D2x" userLabel="Left Current Card">
+                                <rect key="frame" x="16" y="452" width="115" height="15"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5p-1S-fcD" userLabel="Right Current Card">
+                                <rect key="frame" x="189" y="452" width="115" height="15"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-9q-oGQ" userLabel="FotL Yellow">
+                                <rect key="frame" x="26" y="481" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.96111505681818177" green="0.94732479075214304" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="YL">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqD-1d-GqV" userLabel="FotL Red">
+                                <rect key="frame" x="79" y="481" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="RL">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-c2-jra" userLabel="FotR Yellow" colorLabel="IBBuiltInLabel-Yellow">
+                                <rect key="frame" x="202" y="481" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.96111505679999998" green="0.94732479079999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="YR">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-pe-Kp4" userLabel="FotR Red">
+                                <rect key="frame" x="255" y="481" width="40" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="RR">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -160,8 +171,14 @@
                     <connections>
                         <outlet property="m_doubleTapLeftGesture" destination="pYs-2h-pvs" id="Tfl-hz-ABN"/>
                         <outlet property="m_doubleTapRightGesture" destination="lEh-57-nal" id="Cnf-xy-5xk"/>
+                        <outlet property="m_leftCurrentCard" destination="EPs-oR-D2x" id="WuT-b8-Dmn"/>
+                        <outlet property="m_leftRedCard" destination="kqD-1d-GqV" id="oQZ-q2-143"/>
                         <outlet property="m_leftScoreLabel" destination="Sev-mm-k1U" id="JU3-7q-BOq"/>
+                        <outlet property="m_leftYellowCard" destination="zgT-9q-oGQ" id="Wd5-W2-Wdw"/>
+                        <outlet property="m_rightCurrentCard" destination="m5p-1S-fcD" id="WQI-Sn-W3R"/>
+                        <outlet property="m_rightRedCard" destination="dV6-pe-Kp4" id="kMU-KG-ykY"/>
                         <outlet property="m_rightScoreLabel" destination="sUy-du-4KB" id="1rv-0A-lOX"/>
+                        <outlet property="m_rightYellowCard" destination="Sal-c2-jra" id="bQF-Ag-Fkd"/>
                         <outlet property="m_tapLeftGesture" destination="D4B-tN-fWN" id="wjz-IG-RhI"/>
                         <outlet property="m_tapRightGesture" destination="SeX-eI-3Jj" id="hH4-KZ-ykq"/>
                         <outlet property="m_tapTimerGesture" destination="0Bi-5e-LQZ" id="QRb-7Z-L4Y"/>
