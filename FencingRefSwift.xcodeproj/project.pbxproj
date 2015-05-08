@@ -25,6 +25,7 @@
 		29C94F3B1AE3F34400584FCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29C94F391AE3F34400584FCF /* Main.storyboard */; };
 		29C94F401AE3F34400584FCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29C94F3E1AE3F34400584FCF /* LaunchScreen.xib */; };
 		29C94F4C1AE3F34400584FCF /* FencingRefSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F4B1AE3F34400584FCF /* FencingRefSwiftTests.swift */; };
+		29E541511AFC47C600EC6A47 /* ModalTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		29C94F451AE3F34400584FCF /* FencingRefSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FencingRefSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C94F4A1AE3F34400584FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29C94F4B1AE3F34400584FCF /* FencingRefSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FencingRefSwiftTests.swift; sourceTree = "<group>"; };
+		29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTimerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				296B14451AE4879900A3CAAB /* Bout.swift */,
 				296B144D1AED226700A3CAAB /* BoutViewController.swift */,
 				299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */,
+				29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */,
 				296B14511AED2FD300A3CAAB /* device4in.storyboard */,
 				296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 			);
@@ -276,6 +279,7 @@
 				29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */,
 				296B14691AF3F7AD00A3CAAB /* FAImageView.m in Sources */,
 				299F32821AF539B200BD5AB0 /* BoutTimerViewController.swift in Sources */,
+				29E541511AFC47C600EC6A47 /* ModalTimerViewController.swift in Sources */,
 				296B146C1AF3F7AD00A3CAAB /* String+FontAwesome.swift in Sources */,
 				296B14461AE4879900A3CAAB /* Bout.swift in Sources */,
 				296B14481AE489D000A3CAAB /* Timer.swift in Sources */,

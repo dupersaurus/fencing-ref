@@ -66,6 +66,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="callMedicalTimeout:" destination="gfm-lB-8qY" eventType="touchUpInside" id="AUn-Ta-P1i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE4-f4-LHI" userLabel="Period Break">
                                 <rect key="frame" x="205" y="49" width="50" height="49"/>
@@ -75,6 +78,9 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="manualPeriodBreak:" destination="gfm-lB-8qY" eventType="touchUpInside" id="tWw-kH-9IL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-oz-C0y" userLabel="Roll Priority">
                                 <rect key="frame" x="147" y="49" width="50" height="49"/>
@@ -259,6 +265,79 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="825" y="204"/>
+        </scene>
+        <!--Modal Timer View Controller-->
+        <scene sceneID="F1d-Rf-GPK">
+            <objects>
+                <viewController storyboardIdentifier="modalTimer" id="DoT-oV-ojT" customClass="ModalTimerViewController" customModule="FencingRefSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HnM-46-HSk"/>
+                        <viewControllerLayoutGuide type="bottom" id="4E2-ub-iSR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mr4-st-COz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6et-tB-Mtm" userLabel="Time Label">
+                                <rect key="frame" x="0.0" y="128" width="320" height="170"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="140"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V65-5w-jbc" userLabel="Left Score">
+                                <rect key="frame" x="16" y="324" width="115" height="120"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ4-p9-RDs" userLabel="Right Score">
+                                <rect key="frame" x="189" y="324" width="115" height="120"/>
+                                <color key="backgroundColor" red="0.12957360200000001" green="0.80305003159999999" blue="0.10748053589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-hU-09f" userLabel="Title Label">
+                                <rect key="frame" x="16" y="28" width="288" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au0-j0-5iY">
+                                <rect key="frame" x="16" y="484" width="288" height="43"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Tap to Continue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SeG-k2-DaE" appends="YES" id="UN6-o3-ITY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="m_leftScoreLabel" destination="V65-5w-jbc" id="kRV-XJ-PxN"/>
+                        <outlet property="m_rightScoreLabel" destination="mQ4-p9-RDs" id="3RT-dy-fhU"/>
+                        <outlet property="m_timerLabel" destination="6et-tB-Mtm" id="TQE-oY-JQq"/>
+                        <outlet property="m_titleLabel" destination="qPl-hU-09f" id="t3Y-0z-yOJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zH-su-agn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SeG-k2-DaE">
+                    <connections>
+                        <action selector="stopTimer:" destination="DoT-oV-ojT" id="IiK-MB-BQb"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="825" y="848"/>
         </scene>
     </scenes>
 </document>

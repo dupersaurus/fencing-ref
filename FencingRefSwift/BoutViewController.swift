@@ -48,6 +48,8 @@ class BoutViewController: UIViewController {
     /** The modal screen used when running the timer */
     var m_boutTimerModal:BoutTimerViewController?;
     
+    var m_timerModal:ModalTimerViewController?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -109,6 +111,14 @@ class BoutViewController: UIViewController {
         resetCurrentBout();
     }
     
+    @IBAction func manualPeriodBreak(sender: UIButton) {
+        startPeriodBreak();
+    }
+    
+    @IBAction func callMedicalTimeout(sender: UIButton) {
+        startMedicalTimeout();
+    }
+    
     // MARK: - Input handlers
     
     func startTimer() {
@@ -159,6 +169,31 @@ class BoutViewController: UIViewController {
     
     func resetCurrentBout() {
         m_bout?.resetToDefault();
+    }
+    
+    // MARK: - Control
+    
+    func startPeriodBreak() {
+        startModalTimer(time: 60, title: "Period Break", onClose: onModalTimerClose);
+    }
+    
+    func startMedicalTimeout() {
+        startModalTimer(time: 600, title: "Medical Timeout", onClose: onModalTimerClose);
+    }
+    
+    /** Start running the generic modal timer */
+    func startModalTimer(time fTime:Float, title sTitle:String, onClose cbClose:(Void->Void)) {
+        
+        if m_timerModal == nil {
+            m_timerModal = self.storyboard!.instantiateViewControllerWithIdentifier("modalTimer") as? ModalTimerViewController;
+        }
+        
+        presentViewController(m_timerModal!, animated: false, completion: nil);
+        m_timerModal?.start(time: fTime, title: sTitle, leftScore: (m_bout?.leftScore)!, rightScore: (m_bout?.rightScore)!, onClose: cbClose);
+    }
+    
+    func onModalTimerClose() {
+        dismissViewControllerAnimated(false, completion: nil);
     }
     
     // MARK: - Calls from the Bout

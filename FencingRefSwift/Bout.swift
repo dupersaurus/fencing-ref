@@ -123,6 +123,14 @@ public class Bout {
     /** The default bout time */
     var m_fDefaultTime:Float;
     
+    public var leftScore:UInt8 {
+        return m_boutData.leftScore;
+    }
+    
+    public var rightScore:UInt8 {
+        return m_boutData.rightScore;
+    }
+    
     init(boutTime fTime:Float, view vc:BoutViewController) {
         m_viewController = vc;
         m_boutData = BoutData();
