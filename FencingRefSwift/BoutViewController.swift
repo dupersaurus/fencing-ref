@@ -73,6 +73,11 @@ class BoutViewController: UIViewController {
         m_rightCurrentCard.layer.borderColor = UIColor.whiteColor().CGColor;
         m_rightCurrentCard.layer.borderWidth = 1;
         m_rightCurrentCard.layer.cornerRadius = 5;
+        
+        m_leftYellowCard.layer.cornerRadius = 5;
+        m_leftRedCard.layer.cornerRadius = 5;
+        m_rightYellowCard.layer.cornerRadius = 5;
+        m_rightRedCard.layer.cornerRadius = 5;
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

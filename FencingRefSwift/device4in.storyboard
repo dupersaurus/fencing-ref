@@ -324,6 +324,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="m_continueButton" destination="au0-j0-5iY" id="gm5-H7-9jg"/>
                         <outlet property="m_leftScoreLabel" destination="V65-5w-jbc" id="kRV-XJ-PxN"/>
                         <outlet property="m_rightScoreLabel" destination="mQ4-p9-RDs" id="3RT-dy-fhU"/>
                         <outlet property="m_timerLabel" destination="6et-tB-Mtm" id="TQE-oY-JQq"/>

@@ -16,6 +16,8 @@ class ModalTimerViewController : UIViewController {
     @IBOutlet weak var m_leftScoreLabel: UILabel!
     @IBOutlet weak var m_rightScoreLabel: UILabel!
     
+    @IBOutlet weak var m_continueButton: UIButton!
+    
     private var m_timer:Timer?;
     
     /** Method to call when stopping the timer */
@@ -23,6 +25,8 @@ class ModalTimerViewController : UIViewController {
     
     override func viewDidLoad() {
         m_timer = Timer(countdownFrom: 0, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerComplete);
+        
+        m_continueButton.layer.cornerRadius = 15;
     }
     
     func start(time fTime:Float, title sTitle:String, leftScore iLeftScore:UInt8, rightScore iRightScore:UInt8, onClose cbClose:(Void->Void)) {
