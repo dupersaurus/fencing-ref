@@ -124,6 +124,22 @@ class BoutViewController: UIViewController {
         startMedicalTimeout();
     }
     
+    @IBAction func giveYellowCardLeft(sender: UIButton) {
+        m_bout?.cardLeft(Bout.Card.Yellow);
+    }
+    
+    @IBAction func giveRedCardLeft(sender: UIButton) {
+        m_bout?.cardLeft(Bout.Card.Red);
+    }
+    
+    @IBAction func giveYellowCardRight(sender: UIButton) {
+        m_bout?.cardRight(Bout.Card.Yellow);
+    }
+    
+    @IBAction func giveRedCardRight(sender: UIButton) {
+        m_bout?.cardRight(Bout.Card.Red);
+    }
+    
     // MARK: - Input handlers
     
     func startTimer() {
@@ -219,6 +235,27 @@ class BoutViewController: UIViewController {
     */
     func setRightScore(score iScore:UInt8) {
         m_rightScoreLabel.text = "\(iScore)";
+    }
+    
+    func setLeftCard(cardType:Bout.Card) {
+        setCard(m_leftCurrentCard, card: cardType);
+    }
+    
+    func setRightCard(cardType:Bout.Card) {
+        setCard(m_rightCurrentCard, card: cardType);
+    }
+    
+    private func setCard(cardDisplay:UIView, card:Bout.Card) {
+        switch card {
+            case .Yellow:
+                cardDisplay.backgroundColor = UIColor.yellowColor();
+            
+            case .Red:
+                cardDisplay.backgroundColor = UIColor.redColor();
+            
+            default:
+                cardDisplay.backgroundColor = UIColor.blackColor();
+        }
     }
     
     /**

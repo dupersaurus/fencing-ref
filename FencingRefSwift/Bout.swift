@@ -204,6 +204,18 @@ public class Bout {
         recordBoutEvent("Double-touch");
     }
     
+    public func cardLeft(card:Card) {
+        m_boutData.leftCard = card;
+        m_viewController.setLeftCard(m_boutData.leftCard);
+        m_viewController.setRightScore(score: m_boutData.rightScore);
+    }
+    
+    public func cardRight(card:Card) {
+        m_boutData.rightCard = card;
+        m_viewController.setRightCard(m_boutData.rightCard);
+        m_viewController.setLeftScore(score: m_boutData.leftScore);
+    }
+    
     // MARK: - Bout management
     
     /** Reset the bout to its default state */

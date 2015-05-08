@@ -140,6 +140,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="giveYellowCardLeft:" destination="gfm-lB-8qY" eventType="touchUpInside" id="KoE-Zh-0uU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqD-1d-GqV" userLabel="FotL Red">
                                 <rect key="frame" x="79" y="481" width="40" height="40"/>
@@ -148,6 +151,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="giveRedCardLeft:" destination="gfm-lB-8qY" eventType="touchUpInside" id="fNe-iq-mZt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-c2-jra" userLabel="FotR Yellow" colorLabel="IBBuiltInLabel-Yellow">
                                 <rect key="frame" x="202" y="481" width="40" height="40"/>
@@ -156,6 +162,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="giveYellowCardRight:" destination="gfm-lB-8qY" eventType="touchUpInside" id="URX-z1-Qeg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-pe-Kp4" userLabel="FotR Red">
                                 <rect key="frame" x="255" y="481" width="40" height="40"/>
@@ -164,6 +173,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="giveRedCardRight:" destination="gfm-lB-8qY" eventType="touchUpInside" id="a3A-2F-oES"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
