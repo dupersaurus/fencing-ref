@@ -107,21 +107,21 @@ public class Bout {
     }
     
     /** Log of events that occur during the bout */
-    var m_boutEvents:[BoutEvent];
+    private var m_boutEvents:[BoutEvent];
     
-    var m_viewController:BoutViewController;
+    private var m_viewController:BoutViewController;
     
     /** Fencer data for the current bout */
-    var m_boutData:BoutData;
+    private var m_boutData:BoutData;
     
     /** The current period */
-    var m_iPeriod:UInt8;
+    private var m_iPeriod:UInt8;
     
     /** The bout timer */
-    var m_timer:Timer?;
+    private var m_timer:Timer?;
     
     /** The default bout time */
-    var m_fDefaultTime:Float;
+    private var m_fDefaultTime:Float;
     
     public var leftScore:UInt8 {
         return m_boutData.leftScore;
@@ -129,6 +129,10 @@ public class Bout {
     
     public var rightScore:UInt8 {
         return m_boutData.rightScore;
+    }
+    
+    public var currentTime:Float {
+        return (m_timer?.currentTime)!;
     }
     
     init(boutTime fTime:Float, view vc:BoutViewController) {
@@ -140,9 +144,19 @@ public class Bout {
         
         m_timer = Timer(countdownFrom: fTime, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerFinish);
         
-        vc.setCurrentTime(currentTime: fTime);
-        vc.setLeftScore(score: 0);
-        vc.setRightScore(score: 0);
+        setupBout();
+    }
+    
+    func setupBout() {
+        m_boutData = BoutData();
+        m_timer?.currentTime = m_fDefaultTime;
+        m_iPeriod = 0;
+        
+        m_viewController.setLeftScore(score: m_boutData.leftScore);
+        m_viewController.setRightScore(score: m_boutData.rightScore);
+        m_viewController.setCurrentTime(currentTime: m_fDefaultTime);
+        m_viewController.setPeriodLabel(labelText: "");
+        m_viewController.clearPriority();
     }
     
     // MARK: - Bout actions
@@ -216,6 +230,21 @@ public class Bout {
         m_viewController.setLeftScore(score: m_boutData.leftScore);
     }
     
+    /** Called by the view controller when the user closes the period break vc */
+    public func periodBreakComplete() {
+        
+    }
+    
+    /** Select the priority */
+    public func selectPriority() {
+        m_viewController.setPriority(forLeft: rand() % 2 == 1);
+        
+        m_timer?.currentTime = 60;
+        m_viewController.setCurrentTime(currentTime: 60);
+        
+        m_viewController.setPeriodLabel(labelText: "Priority Minute");
+    }
+    
     // MARK: - Bout management
     
     /** Reset the bout to its default state */
@@ -226,6 +255,9 @@ public class Bout {
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         m_viewController.setRightScore(score: m_boutData.rightScore);
         m_viewController.setCurrentTime(currentTime: m_fDefaultTime);
+        m_viewController.clearPriority();
+        
+        m_viewController.setPeriodLabel(labelText: "");
     }
     
     // MARK: - Internals
@@ -239,6 +271,13 @@ public class Bout {
         var time:Float? = m_timer?.currentTime;
         var event:BoutEvent = BoutEvent(time: time!, leftScore: m_boutData.leftScore, rightScore: m_boutData.rightScore, sMessage: sMessage);
         m_boutEvents.append(event);
+    }
+    
+    /** Called at the end of the period. Handle switching to the next. */
+    func endOfPeriod() {
+        if (m_boutData.leftScore == m_boutData.rightScore) {
+            m_viewController.wantPriority(true);
+        }
     }
     
     // MARK: - Timer handling
@@ -256,5 +295,7 @@ public class Bout {
     func onTimerFinish() {
         m_viewController.setCurrentTime(currentTime: 0);
         m_viewController.stopTimer();
+        
+        endOfPeriod();
     }
 }

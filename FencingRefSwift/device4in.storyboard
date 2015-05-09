@@ -10,6 +10,8 @@
             <string>FontAwesome</string>
             <string>FontAwesome</string>
             <string>FontAwesome</string>
+            <string>FontAwesome</string>
+            <string>FontAwesome</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -25,8 +27,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T72-as-9wK" userLabel="Top BG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o6H-rz-PPM" userLabel="Green BG" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="159" y="324" width="161" height="120"/>
+                                <color key="backgroundColor" red="0.12957360200000001" green="0.80305003159999999" blue="0.10748053589999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SeX-eI-3Jj" appends="YES" id="QpN-A6-uEF"/>
+                                    <outletCollection property="gestureRecognizers" destination="lEh-57-nal" appends="YES" id="iHd-Yb-iA5"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQm-9Q-vXi" userLabel="Red BG" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="0.0" y="324" width="159" height="120"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="D4B-tN-fWN" appends="YES" id="rXH-Bc-EyN"/>
+                                    <outletCollection property="gestureRecognizers" destination="pYs-2h-pvs" appends="YES" id="1MS-0q-3lJ"/>
+                                </connections>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iG-hK-J3l" userLabel="Double Touch">
-                                <rect key="frame" x="137" y="334" width="46" height="98"/>
+                                <rect key="frame" x="129" y="324" width="60" height="120"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <state key="normal" title="++">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-nk-hs9" userLabel="New Bout">
-                                <rect key="frame" x="6" y="49" width="50" height="49"/>
+                                <rect key="frame" x="11" y="24" width="50" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="New Bout"/>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
@@ -47,7 +69,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUa-6i-cpq" userLabel="Reset Bout">
-                                <rect key="frame" x="64" y="49" width="50" height="49"/>
+                                <rect key="frame" x="64" y="24" width="50" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                                 <state key="normal" title="">
@@ -59,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpG-09-9Et" userLabel="Medical Time Out">
-                                <rect key="frame" x="263" y="49" width="50" height="49"/>
+                                <rect key="frame" x="257" y="24" width="50" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                                 <state key="normal" title="">
@@ -71,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vE4-f4-LHI" userLabel="Period Break">
-                                <rect key="frame" x="205" y="49" width="50" height="49"/>
+                                <rect key="frame" x="204" y="24" width="50" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                                 <state key="normal" title="">
@@ -83,13 +105,16 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFw-oz-C0y" userLabel="Roll Priority">
-                                <rect key="frame" x="147" y="49" width="50" height="49"/>
+                                <rect key="frame" x="151" y="24" width="50" height="49"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
-                                <state key="normal" title="">
+                                <state key="normal" title="">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="flipPriority:" destination="gfm-lB-8qY" eventType="touchUpInside" id="r9Q-ge-9oo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-n2-zfM" userLabel="Time Label">
                                 <rect key="frame" x="0.0" y="128" width="320" height="170"/>
@@ -103,19 +128,20 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sev-mm-k1U" userLabel="Left Score">
                                 <rect key="frame" x="16" y="324" width="115" height="120"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="D4B-tN-fWN" appends="YES" id="Myl-AN-txc"/>
-                                    <outletCollection property="gestureRecognizers" destination="pYs-2h-pvs" appends="YES" id="JgA-l3-vzL"/>
+                                    <outletCollection property="gestureRecognizers" destination="pYs-2h-pvs" appends="YES" id="Mrr-jd-SAP"/>
+                                    <outletCollection property="gestureRecognizers" destination="D4B-tN-fWN" appends="YES" id="WZO-Qi-ORk"/>
                                 </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUy-du-4KB" userLabel="Right Score">
                                 <rect key="frame" x="189" y="324" width="115" height="120"/>
-                                <color key="backgroundColor" red="0.12957360200000001" green="0.80305003159999999" blue="0.10748053589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -177,6 +203,30 @@
                                     <action selector="giveRedCardRight:" destination="gfm-lB-8qY" eventType="touchUpInside" id="a3A-2F-oES"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Period 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oY2-nr-rNu">
+                                <rect key="frame" x="11" y="132" width="296" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1K-B0-BVg">
+                                <rect key="frame" x="89" y="295" width="27" height="21"/>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Priority" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uao-XS-6Yt">
+                                <rect key="frame" x="120" y="295" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSm-D9-qf3">
+                                <rect key="frame" x="202" y="296" width="27" height="21"/>
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -193,6 +243,10 @@
                         <outlet property="m_leftRedCard" destination="kqD-1d-GqV" id="oQZ-q2-143"/>
                         <outlet property="m_leftScoreLabel" destination="Sev-mm-k1U" id="JU3-7q-BOq"/>
                         <outlet property="m_leftYellowCard" destination="zgT-9q-oGQ" id="Wd5-W2-Wdw"/>
+                        <outlet property="m_periodLabel" destination="oY2-nr-rNu" id="8ro-DA-flS"/>
+                        <outlet property="m_priorityLeft" destination="O1K-B0-BVg" id="ktx-LC-5Ij"/>
+                        <outlet property="m_priorityRight" destination="FSm-D9-qf3" id="a3p-WR-roJ"/>
+                        <outlet property="m_priorityTitle" destination="Uao-XS-6Yt" id="eZ4-8F-6fJ"/>
                         <outlet property="m_rightCurrentCard" destination="m5p-1S-fcD" id="WQI-Sn-W3R"/>
                         <outlet property="m_rightRedCard" destination="dV6-pe-Kp4" id="kMU-KG-ykY"/>
                         <outlet property="m_rightScoreLabel" destination="sUy-du-4KB" id="1rv-0A-lOX"/>
@@ -290,6 +344,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ndd-ua-H0D" userLabel="Green BG" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="159" y="324" width="161" height="120"/>
+                                <color key="backgroundColor" red="0.12957360200000001" green="0.80305003159999999" blue="0.10748053589999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w8F-b5-8n2" userLabel="Red BG" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="0.0" y="324" width="159" height="120"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6et-tB-Mtm" userLabel="Time Label">
                                 <rect key="frame" x="0.0" y="128" width="320" height="170"/>
                                 <gestureRecognizers/>
@@ -299,7 +361,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V65-5w-jbc" userLabel="Left Score">
                                 <rect key="frame" x="16" y="324" width="115" height="120"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.020100812990000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -307,7 +368,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ4-p9-RDs" userLabel="Right Score">
                                 <rect key="frame" x="189" y="324" width="115" height="120"/>
-                                <color key="backgroundColor" red="0.12957360200000001" green="0.80305003159999999" blue="0.10748053589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="90"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>

@@ -53,4 +53,8 @@ class ModalTimerViewController : UIViewController {
         m_timer?.stop();
         m_cbClose?();
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
 }

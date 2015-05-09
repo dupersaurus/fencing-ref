@@ -26,4 +26,8 @@ class BoutTimerViewController : UIViewController {
     @IBAction func stopTimer(gesture:UITapGestureRecognizer) {
         m_cbHalt?();
     }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
 }

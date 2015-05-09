@@ -29,6 +29,12 @@ class BoutViewController: UIViewController {
     @IBOutlet weak var m_rightRedCard: UIButton!
     @IBOutlet weak var m_rightCurrentCard: UIView!
     
+    @IBOutlet weak var m_periodLabel: UILabel!
+    
+    @IBOutlet weak var m_priorityTitle: UILabel!
+    @IBOutlet weak var m_priorityLeft: UILabel!
+    @IBOutlet weak var m_priorityRight: UILabel!
+    
     /** Single-tap gesture for the timer */
     @IBOutlet var m_tapTimerGesture: UITapGestureRecognizer!
     
@@ -78,6 +84,9 @@ class BoutViewController: UIViewController {
         m_leftRedCard.layer.cornerRadius = 5;
         m_rightYellowCard.layer.cornerRadius = 5;
         m_rightRedCard.layer.cornerRadius = 5;
+        
+        setPriorityDisplay(left: false, right: false);
+        
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -124,6 +133,10 @@ class BoutViewController: UIViewController {
         startMedicalTimeout();
     }
     
+    @IBAction func flipPriority(sender: AnyObject) {
+        m_bout?.selectPriority();
+    }
+    
     @IBAction func giveYellowCardLeft(sender: UIButton) {
         m_bout?.cardLeft(Bout.Card.Yellow);
     }
@@ -151,6 +164,7 @@ class BoutViewController: UIViewController {
         presentViewController(m_boutTimerModal!, animated: false, completion: nil);
         
         m_bout?.start();
+        m_boutTimerModal?.setBoutTime((m_bout?.currentTime)!);
         alert();
     }
     
@@ -217,6 +231,19 @@ class BoutViewController: UIViewController {
         dismissViewControllerAnimated(false, completion: nil);
     }
     
+    private func setPriorityDisplay(left bLeft:Bool, right bRight:Bool) {
+        if (bLeft || bRight) {
+            m_priorityTitle.hidden = false;
+            m_priorityLeft.hidden = !bLeft;
+            m_priorityRight.hidden = !bRight;
+            
+        } else {
+            m_priorityTitle.hidden = true;
+            m_priorityLeft.hidden = true;
+            m_priorityRight.hidden = true;
+        }
+    }
+    
     // MARK: - Calls from the Bout
     
     /**
@@ -258,6 +285,10 @@ class BoutViewController: UIViewController {
         }
     }
     
+    func setPeriodLabel(labelText sText:String) {
+        m_periodLabel.text = sText;
+    }
+    
     /**
     Sets the current bout time
     
@@ -266,6 +297,25 @@ class BoutViewController: UIViewController {
     func setCurrentTime(currentTime fCurrentTime:Float) {
         m_timerLabel?.text = Timer.getTimeString(timeInSeconds: fCurrentTime);
         m_boutTimerModal?.setBoutTime(fCurrentTime);
+    }
+    
+    /**
+    Set who has priority
+    
+    :forLeft: True to give priority to left, false to right
+    */
+    func setPriority(forLeft bLeft:Bool) {
+        setPriorityDisplay(left: bLeft, right: !bLeft);
+    }
+    
+    /** Clear the priority display */
+    func clearPriority() {
+        setPriorityDisplay(left: false, right: false);
+    }
+    
+    /** Bout wants the user to select priority */
+    func wantPriority(bWant:Bool) {
+        
     }
     
     /** Alert the user with a buzz and sound */
