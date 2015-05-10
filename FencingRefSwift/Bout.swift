@@ -109,13 +109,13 @@ public class Bout {
     /** Log of events that occur during the bout */
     private var m_boutEvents:[BoutEvent];
     
-    private var m_viewController:BoutViewController;
+    var m_viewController:BoutViewController;
     
     /** Fencer data for the current bout */
     private var m_boutData:BoutData;
     
     /** The current period */
-    private var m_iPeriod:UInt8;
+    var m_iPeriod:UInt8;
     
     /** The bout timer */
     private var m_timer:Timer?;
@@ -135,14 +135,14 @@ public class Bout {
         return (m_timer?.currentTime)!;
     }
     
-    init(boutTime fTime:Float, view vc:BoutViewController) {
+    init (vc:BoutViewController) {
         m_viewController = vc;
         m_boutData = BoutData();
-        m_fDefaultTime = fTime;
+        m_fDefaultTime = 180;
         m_iPeriod = 1;
         m_boutEvents = [BoutEvent]();
         
-        m_timer = Timer(countdownFrom: fTime, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerFinish);
+        m_timer = Timer(countdownFrom: m_fDefaultTime, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerFinish);
         
         setupBout();
     }
@@ -183,6 +183,8 @@ public class Bout {
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         
         recordBoutEvent("Left scores");
+        
+        scoreUpdated();
     }
     
     public func reverseTouchLeft() {
@@ -198,6 +200,8 @@ public class Bout {
         m_viewController.setRightScore(score: m_boutData.rightScore);
         
         recordBoutEvent("Right scores");
+        
+        scoreUpdated();
     }
     
     public func reverseTouchRight() {
@@ -215,6 +219,8 @@ public class Bout {
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         m_viewController.setRightScore(score: m_boutData.rightScore);
         
+        scoreUpdated();
+        
         recordBoutEvent("Double-touch");
     }
     
@@ -222,12 +228,16 @@ public class Bout {
         m_boutData.leftCard = card;
         m_viewController.setLeftCard(m_boutData.leftCard);
         m_viewController.setRightScore(score: m_boutData.rightScore);
+        
+        scoreUpdated();
     }
     
     public func cardRight(card:Card) {
         m_boutData.rightCard = card;
         m_viewController.setRightCard(m_boutData.rightCard);
         m_viewController.setLeftScore(score: m_boutData.leftScore);
+        
+        scoreUpdated();
     }
     
     /** Called by the view controller when the user closes the period break vc */
@@ -277,6 +287,13 @@ public class Bout {
     func endOfPeriod() {
         if (m_boutData.leftScore == m_boutData.rightScore) {
             m_viewController.wantPriority(true);
+        }
+    }
+    
+    /** Called whenever the score is changed */
+    func scoreUpdated() {
+        if m_boutData.leftScore >= 5 || m_boutData.rightScore >= 5 {
+            m_viewController.alert();
         }
     }
     

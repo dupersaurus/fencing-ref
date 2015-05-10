@@ -60,7 +60,8 @@ class BoutViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        m_bout = Bout(boutTime: 180, view: self);
+        //m_bout = Bout(vc: self);
+        m_bout = Bout15Touch(vc: self);
         
         /*m_timerLabel.addGestureRecognizer(m_tapTimerGesture);
         m_leftScoreLabel.addGestureRecognizer(m_tapLeftGesture);
@@ -209,11 +210,11 @@ class BoutViewController: UIViewController {
     // MARK: - Control
     
     func startPeriodBreak() {
-        startModalTimer(time: 60, title: "Period Break", onClose: onModalTimerClose);
+        startModalTimer(time: 60, title: "Period Break", onClose: onPeriodBreakClose);
     }
     
     func startMedicalTimeout() {
-        startModalTimer(time: 600, title: "Medical Timeout", onClose: onModalTimerClose);
+        startModalTimer(time: 600, title: "Medical Timeout", onClose: onMedicalTimerClose);
     }
     
     /** Start running the generic modal timer */
@@ -227,7 +228,12 @@ class BoutViewController: UIViewController {
         m_timerModal?.start(time: fTime, title: sTitle, leftScore: (m_bout?.leftScore)!, rightScore: (m_bout?.rightScore)!, onClose: cbClose);
     }
     
-    func onModalTimerClose() {
+    func onPeriodBreakClose() {
+        dismissViewControllerAnimated(false, completion: nil);
+        m_bout?.periodBreakComplete();
+    }
+    
+    func onMedicalTimerClose() {
         dismissViewControllerAnimated(false, completion: nil);
     }
     

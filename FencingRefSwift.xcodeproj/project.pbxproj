@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2966CB391AFFA19B009B5C2E /* Bout15Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */; };
 		296B14461AE4879900A3CAAB /* Bout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14451AE4879900A3CAAB /* Bout.swift */; };
 		296B14481AE489D000A3CAAB /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14471AE489D000A3CAAB /* Timer.swift */; };
 		296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B144D1AED226700A3CAAB /* BoutViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout15Touch.swift; sourceTree = "<group>"; };
 		296B14451AE4879900A3CAAB /* Bout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout.swift; sourceTree = "<group>"; };
 		296B14471AE489D000A3CAAB /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		296B144D1AED226700A3CAAB /* BoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				29C94F331AE3F34400584FCF /* Supporting Files */,
 				296B14471AE489D000A3CAAB /* Timer.swift */,
 				296B14451AE4879900A3CAAB /* Bout.swift */,
+				2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */,
 				296B144D1AED226700A3CAAB /* BoutViewController.swift */,
 				299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */,
 				29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2966CB391AFFA19B009B5C2E /* Bout15Touch.swift in Sources */,
 				296B146B1AF3F7AD00A3CAAB /* NSString+FontAwesome.m in Sources */,
 				296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */,
 				29C94F381AE3F34400584FCF /* ViewController.swift in Sources */,
