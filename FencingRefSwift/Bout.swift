@@ -135,6 +135,11 @@ public class Bout {
         return (m_timer?.currentTime)!;
     }
     
+    var boutViewController:BoutViewController {
+        get { return m_viewController; }
+        set { m_viewController = newValue; }
+    }
+    
     init (vc:BoutViewController) {
         m_viewController = vc;
         m_boutData = BoutData();
@@ -157,6 +162,7 @@ public class Bout {
         m_viewController.setCurrentTime(currentTime: m_fDefaultTime);
         m_viewController.setPeriodLabel(labelText: "");
         m_viewController.clearPriority();
+        m_viewController.setFencingToScore(score: 5);
     }
     
     // MARK: - Bout actions

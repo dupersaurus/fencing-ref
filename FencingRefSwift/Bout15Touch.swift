@@ -15,6 +15,7 @@ public class Bout15Touch : Bout {
         
         m_iPeriod = 1;
         m_viewController.setPeriodLabel(labelText: "Period 1");
+        m_viewController.setFencingToScore(score: 15);
     }
     
     override public func periodBreakComplete() {

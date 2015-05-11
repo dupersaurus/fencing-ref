@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2966CB391AFFA19B009B5C2E /* Bout15Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */; };
+		2966CB3B1B002F87009B5C2E /* CreateNewBoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */; };
 		296B14461AE4879900A3CAAB /* Bout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14451AE4879900A3CAAB /* Bout.swift */; };
 		296B14481AE489D000A3CAAB /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14471AE489D000A3CAAB /* Timer.swift */; };
 		296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B144D1AED226700A3CAAB /* BoutViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout15Touch.swift; sourceTree = "<group>"; };
+		2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewBoutView.swift; sourceTree = "<group>"; };
 		296B14451AE4879900A3CAAB /* Bout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout.swift; sourceTree = "<group>"; };
 		296B14471AE489D000A3CAAB /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		296B144D1AED226700A3CAAB /* BoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				296B144D1AED226700A3CAAB /* BoutViewController.swift */,
 				299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */,
 				29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */,
+				2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */,
 				296B14511AED2FD300A3CAAB /* device4in.storyboard */,
 				296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 			);
@@ -285,6 +288,7 @@
 				299F32821AF539B200BD5AB0 /* BoutTimerViewController.swift in Sources */,
 				29E541511AFC47C600EC6A47 /* ModalTimerViewController.swift in Sources */,
 				296B146C1AF3F7AD00A3CAAB /* String+FontAwesome.swift in Sources */,
+				2966CB3B1B002F87009B5C2E /* CreateNewBoutView.swift in Sources */,
 				296B14461AE4879900A3CAAB /* Bout.swift in Sources */,
 				296B14481AE489D000A3CAAB /* Timer.swift in Sources */,
 				296B146E1AF3F7AD00A3CAAB /* UIImage+FontAwesome.m in Sources */,

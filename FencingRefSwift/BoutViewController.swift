@@ -35,6 +35,8 @@ class BoutViewController: UIViewController {
     @IBOutlet weak var m_priorityLeft: UILabel!
     @IBOutlet weak var m_priorityRight: UILabel!
     
+    @IBOutlet weak var m_fencingToLabel: UILabel!
+    
     /** Single-tap gesture for the timer */
     @IBOutlet var m_tapTimerGesture: UITapGestureRecognizer!
     
@@ -55,6 +57,9 @@ class BoutViewController: UIViewController {
     var m_boutTimerModal:BoutTimerViewController?;
     
     var m_timerModal:ModalTimerViewController?;
+    
+    var m_selectBoutModal:UIViewController?;
+    @IBOutlet weak var m_newBoutView: UIVisualEffectView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +93,8 @@ class BoutViewController: UIViewController {
         
         setPriorityDisplay(left: false, right: false);
         
+        m_newBoutView.hidden = true;
+        //m_newBoutView.center.y = view.bounds.height;
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -154,6 +161,20 @@ class BoutViewController: UIViewController {
         m_bout?.cardRight(Bout.Card.Red);
     }
     
+    @IBAction func startNewBout(sender: AnyObject) {
+        if (m_selectBoutModal == nil) {
+            m_selectBoutModal = self.storyboard!.instantiateViewControllerWithIdentifier("selectBout") as? UIViewController;
+        }
+        
+        m_selectBoutModal!.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+        presentViewController(m_selectBoutModal!, animated: true, completion: nil);
+        
+        //m_newBoutView.hidden = false;
+        
+        /*UIView.transitionWithView(m_newBoutView, duration: 0.5, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            
+            }, completion: nil);*/
+    }
     // MARK: - Input handlers
     
     func startTimer() {
@@ -250,6 +271,15 @@ class BoutViewController: UIViewController {
         }
     }
     
+    /**
+    Start a new bout using a given type
+    
+    :boutType: The type of bout to spawn
+    */
+    func createNewBout(boutType:AnyClass) {
+        
+    }
+    
     // MARK: - Calls from the Bout
     
     /**
@@ -303,6 +333,15 @@ class BoutViewController: UIViewController {
     func setCurrentTime(currentTime fCurrentTime:Float) {
         m_timerLabel?.text = Timer.getTimeString(timeInSeconds: fCurrentTime);
         m_boutTimerModal?.setBoutTime(fCurrentTime);
+    }
+    
+    /**
+    Set the score the bout is being fenced to
+    
+    :score: The score the bout is being fenced to
+    */
+    func setFencingToScore(score iScore:UInt8) {
+        m_fencingToLabel.text = "\(iScore)";
     }
     
     /**
