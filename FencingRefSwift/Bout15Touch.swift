@@ -12,6 +12,10 @@ public class Bout15Touch : Bout {
     
     override func setupBout() {
         super.setupBout();
+    }
+    
+    override func resetToDefault() {
+        super.resetToDefault();
         
         m_iPeriod = 1;
         m_viewController.setPeriodLabel(labelText: "Period 1");

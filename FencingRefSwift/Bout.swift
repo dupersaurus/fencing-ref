@@ -140,7 +140,7 @@ public class Bout {
         set { m_viewController = newValue; }
     }
     
-    init (vc:BoutViewController) {
+    required public init (vc:BoutViewController) {
         m_viewController = vc;
         m_boutData = BoutData();
         m_fDefaultTime = 180;
@@ -270,6 +270,8 @@ public class Bout {
         
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         m_viewController.setRightScore(score: m_boutData.rightScore);
+        m_viewController.setLeftCard(Card.None);
+        m_viewController.setRightCard(Card.None);
         m_viewController.setCurrentTime(currentTime: m_fDefaultTime);
         m_viewController.clearPriority();
         

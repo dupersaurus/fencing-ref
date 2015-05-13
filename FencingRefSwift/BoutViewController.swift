@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AudioToolbox
 
-class BoutViewController: UIViewController {
+public class BoutViewController: UIViewController {
     
     /** Label displaying the current bout time */
     @IBOutlet weak var m_timerLabel: UILabel!
@@ -58,15 +58,15 @@ class BoutViewController: UIViewController {
     
     var m_timerModal:ModalTimerViewController?;
     
-    var m_selectBoutModal:UIViewController?;
-    @IBOutlet weak var m_newBoutView: UIVisualEffectView!
+    var m_selectBoutModal:CreateNewBoutView?;
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         //m_bout = Bout(vc: self);
-        m_bout = Bout15Touch(vc: self);
+        //m_bout = Bout15Touch(vc: self);
+        createNewBout(Bout.self);
         
         /*m_timerLabel.addGestureRecognizer(m_tapTimerGesture);
         m_leftScoreLabel.addGestureRecognizer(m_tapLeftGesture);
@@ -92,12 +92,9 @@ class BoutViewController: UIViewController {
         m_rightRedCard.layer.cornerRadius = 5;
         
         setPriorityDisplay(left: false, right: false);
-        
-        m_newBoutView.hidden = true;
-        //m_newBoutView.center.y = view.bounds.height;
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override public func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
     }
     
@@ -163,7 +160,8 @@ class BoutViewController: UIViewController {
     
     @IBAction func startNewBout(sender: AnyObject) {
         if (m_selectBoutModal == nil) {
-            m_selectBoutModal = self.storyboard!.instantiateViewControllerWithIdentifier("selectBout") as? UIViewController;
+            m_selectBoutModal = self.storyboard!.instantiateViewControllerWithIdentifier("selectBout") as? CreateNewBoutView;
+            m_selectBoutModal?.setBoutVC(self);
         }
         
         m_selectBoutModal!.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
@@ -276,8 +274,9 @@ class BoutViewController: UIViewController {
     
     :boutType: The type of bout to spawn
     */
-    func createNewBout(boutType:AnyClass) {
-        
+    func createNewBout(boutType:Bout.Type) {
+        m_bout = boutType(vc: self);
+        m_bout?.resetToDefault();
     }
     
     // MARK: - Calls from the Bout

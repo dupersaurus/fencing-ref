@@ -249,14 +249,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <visualEffectView hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1I-0J-BQ6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GQa-Cm-KRO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -274,7 +266,6 @@
                         <outlet property="m_leftRedCard" destination="kqD-1d-GqV" id="oQZ-q2-143"/>
                         <outlet property="m_leftScoreLabel" destination="Sev-mm-k1U" id="JU3-7q-BOq"/>
                         <outlet property="m_leftYellowCard" destination="zgT-9q-oGQ" id="Wd5-W2-Wdw"/>
-                        <outlet property="m_newBoutView" destination="Z1I-0J-BQ6" id="p0K-tr-yZd"/>
                         <outlet property="m_periodLabel" destination="oY2-nr-rNu" id="8ro-DA-flS"/>
                         <outlet property="m_priorityLeft" destination="O1K-B0-BVg" id="ktx-LC-5Ij"/>
                         <outlet property="m_priorityRight" destination="FSm-D9-qf3" id="a3p-WR-roJ"/>
