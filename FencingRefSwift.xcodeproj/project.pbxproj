@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2966CB391AFFA19B009B5C2E /* Bout15Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */; };
 		2966CB3B1B002F87009B5C2E /* CreateNewBoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */; };
+		2966CB3D1B02EBCC009B5C2E /* Bout10Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB3C1B02EBCC009B5C2E /* Bout10Touch.swift */; };
+		2966CB3F1B02EDB2009B5C2E /* BoutFIETeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2966CB3E1B02EDB2009B5C2E /* BoutFIETeam.swift */; };
 		296B14461AE4879900A3CAAB /* Bout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14451AE4879900A3CAAB /* Bout.swift */; };
 		296B14481AE489D000A3CAAB /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B14471AE489D000A3CAAB /* Timer.swift */; };
 		296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296B144D1AED226700A3CAAB /* BoutViewController.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout15Touch.swift; sourceTree = "<group>"; };
 		2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewBoutView.swift; sourceTree = "<group>"; };
+		2966CB3C1B02EBCC009B5C2E /* Bout10Touch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout10Touch.swift; sourceTree = "<group>"; };
+		2966CB3E1B02EDB2009B5C2E /* BoutFIETeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutFIETeam.swift; sourceTree = "<group>"; };
 		296B14451AE4879900A3CAAB /* Bout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bout.swift; sourceTree = "<group>"; };
 		296B14471AE489D000A3CAAB /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		296B144D1AED226700A3CAAB /* BoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutViewController.swift; sourceTree = "<group>"; };
@@ -130,21 +134,23 @@
 		29C94F321AE3F34400584FCF /* FencingRefSwift */ = {
 			isa = PBXGroup;
 			children = (
+				29C94F331AE3F34400584FCF /* Supporting Files */,
 				296B145E1AF3F79A00A3CAAB /* fontawesome */,
 				296B145C1AF3F77400A3CAAB /* Images.xcassets */,
 				29C94F351AE3F34400584FCF /* AppDelegate.swift */,
 				29C94F371AE3F34400584FCF /* ViewController.swift */,
 				29C94F391AE3F34400584FCF /* Main.storyboard */,
 				29C94F3E1AE3F34400584FCF /* LaunchScreen.xib */,
-				29C94F331AE3F34400584FCF /* Supporting Files */,
+				296B14511AED2FD300A3CAAB /* device4in.storyboard */,
 				296B14471AE489D000A3CAAB /* Timer.swift */,
 				296B14451AE4879900A3CAAB /* Bout.swift */,
+				2966CB3C1B02EBCC009B5C2E /* Bout10Touch.swift */,
 				2966CB381AFFA19B009B5C2E /* Bout15Touch.swift */,
+				2966CB3E1B02EDB2009B5C2E /* BoutFIETeam.swift */,
 				296B144D1AED226700A3CAAB /* BoutViewController.swift */,
 				299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */,
 				29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */,
 				2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */,
-				296B14511AED2FD300A3CAAB /* device4in.storyboard */,
 				296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 			);
 			path = FencingRefSwift;
@@ -280,10 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2966CB391AFFA19B009B5C2E /* Bout15Touch.swift in Sources */,
+				2966CB3F1B02EDB2009B5C2E /* BoutFIETeam.swift in Sources */,
 				296B146B1AF3F7AD00A3CAAB /* NSString+FontAwesome.m in Sources */,
 				296B144E1AED226700A3CAAB /* BoutViewController.swift in Sources */,
 				29C94F381AE3F34400584FCF /* ViewController.swift in Sources */,
 				29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */,
+				2966CB3D1B02EBCC009B5C2E /* Bout10Touch.swift in Sources */,
 				296B14691AF3F7AD00A3CAAB /* FAImageView.m in Sources */,
 				299F32821AF539B200BD5AB0 /* BoutTimerViewController.swift in Sources */,
 				29E541511AFC47C600EC6A47 /* ModalTimerViewController.swift in Sources */,

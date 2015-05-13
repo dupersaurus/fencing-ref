@@ -8,13 +8,13 @@
 
 import Foundation
 
-public class Bout15Touch : Bout {
+public class Bout10Touch : Bout {
     
     override func setupBout() {
         super.setupBout();
         
-        maxPeriods = 3;
-        pointTarget = 15;
+        maxPeriods = 2;
+        pointTarget = 10;
     }
     
     override func resetToDefault() {
@@ -27,7 +27,7 @@ public class Bout15Touch : Bout {
     override public func periodBreakComplete() {
         currentPeriod++;
         
-        if currentPeriod <= 3 {
+        if currentPeriod <= 2 {
             m_viewController.setPeriodLabel(labelText: "Period \(currentPeriod)");
         } else if leftScore == rightScore {
             m_viewController.wantPriority(true);

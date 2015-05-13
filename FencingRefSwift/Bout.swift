@@ -115,7 +115,31 @@ public class Bout {
     private var m_boutData:BoutData;
     
     /** The current period */
-    var m_iPeriod:UInt8;
+    private var m_iPeriod:UInt8;
+    
+    /** The current period */
+    var currentPeriod:UInt8 {
+        get { return m_iPeriod; }
+        set { m_iPeriod = newValue; }
+    }
+    
+    /** The maximum number of periods for the bout */
+    private var m_iMaxPeriod:UInt8;
+    
+    /** The maximum number of periods for the bout */
+    var maxPeriods:UInt8 {
+        get { return m_iMaxPeriod; }
+        set { m_iMaxPeriod = newValue; }
+    }
+    
+    /** The target score for the bout */
+    private var m_iPointTarget:UInt8;
+    
+    /** The target score for the bout */
+    var pointTarget:UInt8 {
+        get { return m_iPointTarget; }
+        set { m_iPointTarget = newValue; }
+    }
     
     /** The bout timer */
     private var m_timer:Timer?;
@@ -145,24 +169,42 @@ public class Bout {
         m_boutData = BoutData();
         m_fDefaultTime = 180;
         m_iPeriod = 1;
+        m_iMaxPeriod = 1;
+        m_iPointTarget = 5;
         m_boutEvents = [BoutEvent]();
         
-        m_timer = Timer(countdownFrom: m_fDefaultTime, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerFinish);
-        
+        initTimer();
         setupBout();
+    }
+    
+    /*convenience public init(vc:BoutViewController, fTime:Float, iPeriods:UInt8, iPointTarget:UInt8) {
+        m_viewController = vc;
+        m_boutData = BoutData();
+        m_fDefaultTime = fTime;
+        m_iPeriod = 1;
+        m_iMaxPeriod = iPeriods;
+        m_iPointTarget = iPointTarget;
+        m_boutEvents = [BoutEvent]();
+        
+        initTimer();
+        setupBout();
+    }*/
+    
+    func initTimer() {
+        m_timer = Timer(countdownFrom: m_fDefaultTime, withInterval: 0.1, tickCallback: onTimerTick, finishCallback: onTimerFinish);
     }
     
     func setupBout() {
         m_boutData = BoutData();
         m_timer?.currentTime = m_fDefaultTime;
-        m_iPeriod = 0;
+        m_iPeriod = 1;
         
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         m_viewController.setRightScore(score: m_boutData.rightScore);
         m_viewController.setCurrentTime(currentTime: m_fDefaultTime);
         m_viewController.setPeriodLabel(labelText: "");
         m_viewController.clearPriority();
-        m_viewController.setFencingToScore(score: 5);
+        m_viewController.setFencingToScore(score: m_iPointTarget);
     }
     
     // MARK: - Bout actions
@@ -248,7 +290,9 @@ public class Bout {
     
     /** Called by the view controller when the user closes the period break vc */
     public func periodBreakComplete() {
-        
+        m_timer?.currentTime = m_fDefaultTime;
+        m_viewController.setCurrentTime(currentTime: m_fDefaultTime);
+        m_viewController.wantPeriodBreak(false);
     }
     
     /** Select the priority */
@@ -259,6 +303,7 @@ public class Bout {
         m_viewController.setCurrentTime(currentTime: 60);
         
         m_viewController.setPeriodLabel(labelText: "Priority Minute");
+        m_viewController.wantPriority(false);
     }
     
     // MARK: - Bout management
@@ -276,6 +321,9 @@ public class Bout {
         m_viewController.clearPriority();
         
         m_viewController.setPeriodLabel(labelText: "");
+        
+        m_viewController.wantPeriodBreak(false);
+        m_viewController.wantPriority(false);
     }
     
     // MARK: - Internals
@@ -293,14 +341,16 @@ public class Bout {
     
     /** Called at the end of the period. Handle switching to the next. */
     func endOfPeriod() {
-        if (m_boutData.leftScore == m_boutData.rightScore) {
+        if (m_iPeriod == m_iMaxPeriod && m_boutData.leftScore == m_boutData.rightScore) {
             m_viewController.wantPriority(true);
+        } else if m_iMaxPeriod > 1 && m_iPeriod < m_iMaxPeriod {
+            m_viewController.wantPeriodBreak(true);
         }
     }
     
     /** Called whenever the score is changed */
     func scoreUpdated() {
-        if m_boutData.leftScore >= 5 || m_boutData.rightScore >= 5 {
+        if m_boutData.leftScore >= m_iPointTarget || m_boutData.rightScore >= m_iPointTarget {
             m_viewController.alert();
         }
     }

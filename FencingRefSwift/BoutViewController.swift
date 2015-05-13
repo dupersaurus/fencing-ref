@@ -37,6 +37,8 @@ public class BoutViewController: UIViewController {
     
     @IBOutlet weak var m_fencingToLabel: UILabel!
     
+    @IBOutlet weak var m_wantBreakView: UIView!
+    @IBOutlet weak var m_wantPriorityView: UIView!
     /** Single-tap gesture for the timer */
     @IBOutlet var m_tapTimerGesture: UITapGestureRecognizer!
     
@@ -92,6 +94,9 @@ public class BoutViewController: UIViewController {
         m_rightRedCard.layer.cornerRadius = 5;
         
         setPriorityDisplay(left: false, right: false);
+        
+        wantPriority(false);
+        wantPeriodBreak(false);
     }
     
     override public func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -359,7 +364,12 @@ public class BoutViewController: UIViewController {
     
     /** Bout wants the user to select priority */
     func wantPriority(bWant:Bool) {
-        
+        m_wantPriorityView.hidden = !bWant;
+    }
+    
+    /** Bout wants the user to start a period break */
+    func wantPeriodBreak(bWant:Bool) {
+        m_wantBreakView.hidden = !bWant;
     }
     
     /** Alert the user with a buzz and sound */

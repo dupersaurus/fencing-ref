@@ -30,11 +30,11 @@ class CreateNewBoutView : UIViewController {
     }
     
     @IBAction func start10Touch(sender: AnyObject) {
-    
+        createBoutType(Bout10Touch.self);
     }
     
     @IBAction func startFIETeam(sender: AnyObject) {
-    
+        createBoutType(BoutFIETeam.self);
     }
     
     @IBAction func startNCAATeam(sender: AnyObject) {
