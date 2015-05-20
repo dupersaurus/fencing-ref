@@ -22,6 +22,7 @@ class AdjustTimerViewController : UIViewController {
     
     override func viewDidLoad() {
         m_minuteStepper.layer.cornerRadius = 5;
+        m_secondStepper.layer.cornerRadius = 5;
     }
     
     /** Set the vc up with a beginning time */
@@ -36,7 +37,7 @@ class AdjustTimerViewController : UIViewController {
     
     @IBAction func onClose(sender: AnyObject) {
         m_boutVC?.setBoutTime(newTime: getTimeInSeconds());
-        self.dismissViewControllerAnimated(true, completion: nil);
+        self.dismissViewControllerAnimated(false, completion: nil);
     }
     
     @IBAction func onMinuteStep(sender: UIStepper) {

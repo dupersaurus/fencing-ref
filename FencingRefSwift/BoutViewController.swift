@@ -252,7 +252,7 @@ public class BoutViewController: UIViewController {
         }
         
         m_adjustTimerModal!.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
-        presentViewController(m_adjustTimerModal!, animated: true, completion: nil);
+        presentViewController(m_adjustTimerModal!, animated: false, completion: nil);
         m_adjustTimerModal?.setup(currentTime: (m_bout?.currentTime)!, bout: self);
     }
     
