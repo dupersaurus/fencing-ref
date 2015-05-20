@@ -23,6 +23,7 @@
 		296B146D1AF3F7AD00A3CAAB /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14661AF3F7AD00A3CAAB /* UIFont+FontAwesome.m */; };
 		296B146E1AF3F7AD00A3CAAB /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */; };
 		296B14701AF3F7BE00A3CAAB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */; };
+		2996EE141B0BF53700A26564 /* AdjustTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996EE131B0BF53700A26564 /* AdjustTimerViewController.swift */; };
 		299F32821AF539B200BD5AB0 /* BoutTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */; };
 		29C94F361AE3F34400584FCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F351AE3F34400584FCF /* AppDelegate.swift */; };
 		29C94F381AE3F34400584FCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C94F371AE3F34400584FCF /* ViewController.swift */; };
@@ -64,6 +65,7 @@
 		296B14681AF3F7AD00A3CAAB /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FontAwesome.m"; path = "fontawesome/UIImage+FontAwesome.m"; sourceTree = "<group>"; };
 		296B146F1AF3F7BE00A3CAAB /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = fontawesome/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
 		296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FencingRefSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		2996EE131B0BF53700A26564 /* AdjustTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustTimerViewController.swift; sourceTree = "<group>"; };
 		299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoutTimerViewController.swift; sourceTree = "<group>"; };
 		29C94F301AE3F34400584FCF /* FencingRefSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FencingRefSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C94F341AE3F34400584FCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				299F32811AF539B200BD5AB0 /* BoutTimerViewController.swift */,
 				29E541501AFC47C600EC6A47 /* ModalTimerViewController.swift */,
 				2966CB3A1B002F87009B5C2E /* CreateNewBoutView.swift */,
+				2996EE131B0BF53700A26564 /* AdjustTimerViewController.swift */,
 				296B14731AF4459F00A3CAAB /* FencingRefSwift-Bridging-Header.h */,
 			);
 			path = FencingRefSwift;
@@ -297,6 +300,7 @@
 				29E541511AFC47C600EC6A47 /* ModalTimerViewController.swift in Sources */,
 				296B146C1AF3F7AD00A3CAAB /* String+FontAwesome.swift in Sources */,
 				2966CB3B1B002F87009B5C2E /* CreateNewBoutView.swift in Sources */,
+				2996EE141B0BF53700A26564 /* AdjustTimerViewController.swift in Sources */,
 				296B14461AE4879900A3CAAB /* Bout.swift in Sources */,
 				296B14481AE489D000A3CAAB /* Timer.swift in Sources */,
 				296B146E1AF3F7AD00A3CAAB /* UIImage+FontAwesome.m in Sources */,

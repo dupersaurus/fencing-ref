@@ -155,8 +155,13 @@ public class Bout {
         return m_boutData.rightScore;
     }
     
+    /** The current time of the bout */
     public var currentTime:Float {
-        return (m_timer?.currentTime)!;
+        get { return (m_timer?.currentTime)!; }
+        set {
+            m_timer?.currentTime = newValue;
+            m_viewController.setCurrentTime(currentTime: newValue);
+        }
     }
     
     var boutViewController:BoutViewController {

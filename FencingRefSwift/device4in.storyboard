@@ -131,6 +131,7 @@
                                 <nil key="highlightedColor"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="0Bi-5e-LQZ" appends="YES" id="xKW-Qn-9sP"/>
+                                    <outletCollection property="gestureRecognizers" destination="pqM-Aj-T1k" appends="YES" id="Nzs-os-bFl"/>
                                 </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sev-mm-k1U" userLabel="Left Score">
@@ -304,6 +305,7 @@
                         <outlet property="m_tapLeftGesture" destination="D4B-tN-fWN" id="wjz-IG-RhI"/>
                         <outlet property="m_tapRightGesture" destination="SeX-eI-3Jj" id="hH4-KZ-ykq"/>
                         <outlet property="m_tapTimerGesture" destination="0Bi-5e-LQZ" id="QRb-7Z-L4Y"/>
+                        <outlet property="m_tapTimerLongGesture" destination="pqM-Aj-T1k" id="SwX-4Q-A2K"/>
                         <outlet property="m_timerLabel" destination="c7R-n2-zfM" id="zSg-nV-nsm"/>
                         <outlet property="m_wantBreakView" destination="bv2-8u-Apn" id="a0w-Jy-vj1"/>
                         <outlet property="m_wantPriorityView" destination="Q1p-pL-G6v" id="6Cb-99-QRG"/>
@@ -335,6 +337,11 @@
                         <action selector="doubleTapRightScore:" destination="gfm-lB-8qY" id="zHD-Fv-Uq7"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pqM-Aj-T1k">
+                    <connections>
+                        <action selector="longTouchTimer:" destination="gfm-lB-8qY" id="Lm2-wG-rRZ"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="322" y="375"/>
         </scene>
@@ -486,6 +493,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8f-ud-UT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1193" y="204"/>
+        </scene>
+        <!--Adjust Timer-->
+        <scene sceneID="xDa-L2-tSY">
+            <objects>
+                <viewController storyboardIdentifier="adjustTimer" title="Adjust Timer" id="NQg-Vj-1p7" customClass="AdjustTimerViewController" customModule="FencingRefSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q44-zp-MRh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oyo-8k-C6e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TxZ-bI-ZPR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H5d-Ug-KfT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mbc-Od-ybl">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RX8-Gk-Q9H">
+                                            <rect key="frame" x="24" y="516" width="262" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <state key="normal" title="Close">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="onClose:" destination="NQg-Vj-1p7" eventType="touchUpInside" id="jgl-I5-xYK"/>
+                                            </connections>
+                                        </button>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="9" translatesAutoresizingMaskIntoConstraints="NO" id="KZh-f2-5fT" userLabel="Minutes Stepper">
+                                            <rect key="frame" x="30" y="294" width="94" height="29"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="onMinuteStep:" destination="NQg-Vj-1p7" eventType="valueChanged" id="Qer-yW-Lob"/>
+                                            </connections>
+                                        </stepper>
+                                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="59" translatesAutoresizingMaskIntoConstraints="NO" id="Jdi-2n-M5D" userLabel="Seconds Stepper">
+                                            <rect key="frame" x="172" y="294" width="94" height="29"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="onSecondStep:" destination="NQg-Vj-1p7" eventType="valueChanged" id="8S1-6R-uzW"/>
+                                            </connections>
+                                        </stepper>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Bout Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YRe-Cm-aru" userLabel="Title Label">
+                                <rect key="frame" x="10" y="30" width="288" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:59" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h08-wX-cLF" userLabel="Time Label">
+                                <rect key="frame" x="0.0" y="128" width="320" height="170"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="140"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="m_minuteStepper" destination="KZh-f2-5fT" id="hb2-Xr-6Lh"/>
+                        <outlet property="m_secondStepper" destination="Jdi-2n-M5D" id="dFM-zS-TYu"/>
+                        <outlet property="m_timeLabel" destination="h08-wX-cLF" id="xHx-Vx-bUp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KtJ-O7-QFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="848"/>
         </scene>
         <!--Modal Timer View Controller-->
         <scene sceneID="F1d-Rf-GPK">

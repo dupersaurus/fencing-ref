@@ -48,6 +48,8 @@ public class BoutViewController: UIViewController {
     /** Single-tap gesture for right score */
     @IBOutlet var m_tapRightGesture: UITapGestureRecognizer!
     
+    @IBOutlet var m_tapTimerLongGesture: UILongPressGestureRecognizer!
+    
     @IBOutlet var m_doubleTapLeftGesture: UITapGestureRecognizer!
     
     @IBOutlet var m_doubleTapRightGesture: UITapGestureRecognizer!
@@ -58,9 +60,14 @@ public class BoutViewController: UIViewController {
     /** The modal screen used when running the timer */
     var m_boutTimerModal:BoutTimerViewController?;
     
+    /** Break and timeout timer */
     var m_timerModal:ModalTimerViewController?;
     
+    /** Start a new bout */
     var m_selectBoutModal:CreateNewBoutView?;
+    
+    /** Adjust the timer value */
+    var m_adjustTimerModal:AdjustTimerViewController?;
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -178,6 +185,14 @@ public class BoutViewController: UIViewController {
             
             }, completion: nil);*/
     }
+    
+    @IBAction func longTouchTimer(sender: UILongPressGestureRecognizer) {
+        
+        if sender.state == UIGestureRecognizerState.Began {
+            adjustBoutTime();
+        }
+    }
+    
     // MARK: - Input handlers
     
     func startTimer() {
@@ -231,6 +246,16 @@ public class BoutViewController: UIViewController {
         m_bout?.resetToDefault();
     }
     
+    private func adjustBoutTime() {
+        if m_adjustTimerModal == nil {
+            m_adjustTimerModal = self.storyboard!.instantiateViewControllerWithIdentifier("adjustTimer") as? AdjustTimerViewController;
+        }
+        
+        m_adjustTimerModal!.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+        presentViewController(m_adjustTimerModal!, animated: true, completion: nil);
+        m_adjustTimerModal?.setup(currentTime: (m_bout?.currentTime)!, bout: self);
+    }
+    
     // MARK: - Control
     
     func startPeriodBreak() {
@@ -282,6 +307,10 @@ public class BoutViewController: UIViewController {
     func createNewBout(boutType:Bout.Type) {
         m_bout = boutType(vc: self);
         m_bout?.resetToDefault();
+    }
+    
+    func setBoutTime(newTime fTime:Float) {
+        m_bout?.currentTime = fTime;
     }
     
     // MARK: - Calls from the Bout
