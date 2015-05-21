@@ -159,13 +159,13 @@
                                     <outletCollection property="gestureRecognizers" destination="lEh-57-nal" appends="YES" id="cWn-iw-s90"/>
                                 </connections>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPs-oR-D2x" userLabel="Left Current Card">
-                                <rect key="frame" x="16" y="452" width="115" height="15"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5p-1S-fcD" userLabel="Right Current Card">
-                                <rect key="frame" x="189" y="452" width="115" height="15"/>
+                                <rect key="frame" x="159" y="447" width="161" height="26"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bX1-ue-Orf" appends="YES" id="sY7-hy-3Di"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgT-9q-oGQ" userLabel="FotL Yellow">
                                 <rect key="frame" x="26" y="481" width="40" height="40"/>
@@ -277,6 +277,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EPs-oR-D2x" userLabel="Left Current Card">
+                                <rect key="frame" x="0.0" y="447" width="159" height="26"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="olm-47-pKp" appends="YES" id="cub-jd-5dg"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -340,6 +348,16 @@
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pqM-Aj-T1k">
                     <connections>
                         <action selector="longTouchTimer:" destination="gfm-lB-8qY" id="Lm2-wG-rRZ"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="olm-47-pKp" userLabel="Clear Left Card">
+                    <connections>
+                        <action selector="clearLeftCard:" destination="gfm-lB-8qY" id="N5c-bj-29y"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="bX1-ue-Orf" userLabel="Clear Right Card">
+                    <connections>
+                        <action selector="clearRightCard:" destination="gfm-lB-8qY" id="AwL-QW-MJI"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>

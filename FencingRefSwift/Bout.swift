@@ -55,7 +55,7 @@ public class Bout {
         var leftCard:Card {
             get { return m_leftCard; }
             set {
-                if m_leftCard != Card.None {
+                if m_leftCard != Card.None && newValue != Card.None {
                     m_leftCard = Card.Red;
                 } else {
                     m_leftCard = newValue;
@@ -71,7 +71,7 @@ public class Bout {
         var rightCard:Card {
             get { return m_rightCard; }
             set {
-                if m_rightCard != Card.None {
+                if m_rightCard != Card.None && newValue != Card.None {
                     m_rightCard = Card.Red;
                 } else {
                     m_rightCard = newValue;

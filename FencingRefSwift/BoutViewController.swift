@@ -88,12 +88,12 @@ public class BoutViewController: UIViewController {
         m_tapLeftGesture.requireGestureRecognizerToFail(m_doubleTapLeftGesture);
         m_tapRightGesture.requireGestureRecognizerToFail(m_doubleTapRightGesture);
         
-        m_leftCurrentCard.layer.borderColor = UIColor.whiteColor().CGColor;
+        /*m_leftCurrentCard.layer.borderColor = UIColor.whiteColor().CGColor;
         m_leftCurrentCard.layer.borderWidth = 1;
         m_leftCurrentCard.layer.cornerRadius = 5;
         m_rightCurrentCard.layer.borderColor = UIColor.whiteColor().CGColor;
         m_rightCurrentCard.layer.borderWidth = 1;
-        m_rightCurrentCard.layer.cornerRadius = 5;
+        m_rightCurrentCard.layer.cornerRadius = 5;*/
         
         m_leftYellowCard.layer.cornerRadius = 5;
         m_leftRedCard.layer.cornerRadius = 5;
@@ -193,6 +193,13 @@ public class BoutViewController: UIViewController {
         }
     }
     
+    @IBAction func clearLeftCard(sender: UILongPressGestureRecognizer) {
+        m_bout?.cardLeft(Bout.Card.None)
+    }
+    
+    @IBAction func clearRightCard(sender: UILongPressGestureRecognizer) {
+        m_bout?.cardRight(Bout.Card.None);
+    }
     // MARK: - Input handlers
     
     func startTimer() {
