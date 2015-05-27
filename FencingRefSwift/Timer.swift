@@ -12,10 +12,10 @@ import Foundation
 public class Timer : NSObject {
     
     /** The current time, in seconds */
-    private var m_fTime:Float;
+    private var m_fTime:NSTimeInterval;
     
     /** The current value of the timer */
-    var currentTime:Float {
+    var currentTime:NSTimeInterval {
         get {
             return m_fTime;
         }
@@ -34,7 +34,7 @@ public class Timer : NSObject {
     var m_timer:NSTimer?;
     
     /** Called on each tick of the timer */
-    var m_cbTick:((Float)->Void)?;
+    var m_cbTick:((NSTimeInterval)->Void)?;
     
     /** If counting down, function to call on zero */
     var m_cbFinish:(Void->Void)?;
@@ -59,7 +59,7 @@ public class Timer : NSObject {
     
     :param: finishCallback A function with no parameters called when the timer reaches zero.
     */
-    init(countdownFrom fTime:Float, withInterval fInterval:Double, tickCallback cbTick: (Float)->Void, finishCallback cbFinish: (Void)->Void) {
+    init(countdownFrom fTime:NSTimeInterval, withInterval fInterval:Double, tickCallback cbTick: (NSTimeInterval)->Void, finishCallback cbFinish: (Void)->Void) {
         m_fTime = fTime;
         m_bTickUp = false;
         m_fTickInterval = NSTimeInterval(fInterval);
@@ -78,6 +78,7 @@ public class Timer : NSObject {
         m_fTime = 0;
         m_bTickUp = true;
         m_fTickInterval = NSTimeInterval(fInterval);
+        m_cbTick = cbTick;
     }
     
     /** Start running the timer */
@@ -109,10 +110,10 @@ public class Timer : NSObject {
     
     func timerTick(timer:NSTimer) {
         if (m_bTickUp) {
-            m_fTime += Float(m_fTickInterval);
+            m_fTime += m_fTickInterval;
             m_cbTick?(m_fTime);
         } else {
-            m_fTime -= Float(m_fTickInterval);
+            m_fTime -= m_fTickInterval;
             m_cbTick?(m_fTime);
             
             if m_fTime <= 0 {
