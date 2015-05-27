@@ -93,12 +93,12 @@ public class Bout {
     
     /** Data on events that happen during the bout */
     struct BoutEvent {
-        var m_time:Float;
+        var m_time:NSTimeInterval;
         var m_leftScore:UInt8;
         var m_rightScore:UInt8;
         var m_sMessage:String;
         
-        init(time:Float, leftScore:UInt8, rightScore:UInt8, sMessage:String) {
+        init(time:NSTimeInterval, leftScore:UInt8, rightScore:UInt8, sMessage:String) {
             m_time = time;
             m_leftScore = leftScore;
             m_rightScore = rightScore;
@@ -145,7 +145,7 @@ public class Bout {
     private var m_timer:Timer?;
     
     /** The default bout time */
-    private var m_fDefaultTime:Float;
+    private var m_fDefaultTime:NSTimeInterval;
     
     public var leftScore:UInt8 {
         return m_boutData.leftScore;
@@ -156,7 +156,7 @@ public class Bout {
     }
     
     /** The current time of the bout */
-    public var currentTime:Float {
+    public var currentTime:NSTimeInterval {
         get { return (m_timer?.currentTime)!; }
         set {
             m_timer?.currentTime = newValue;
@@ -339,7 +339,7 @@ public class Bout {
     :sMessage: The message to record. Timestamp and scores are automatically added.
     */
     private func recordBoutEvent(sMessage:String) {
-        var time:Float? = m_timer?.currentTime;
+        var time:NSTimeInterval? = m_timer?.currentTime;
         var event:BoutEvent = BoutEvent(time: time!, leftScore: m_boutData.leftScore, rightScore: m_boutData.rightScore, sMessage: sMessage);
         m_boutEvents.append(event);
     }
@@ -367,7 +367,7 @@ public class Bout {
     
     :fTimerValue: The value of the timer after the tick
     */
-    func onTimerTick(fTimerValue:Float) {
+    func onTimerTick(fTimerValue:NSTimeInterval) {
         m_viewController.setCurrentTime(currentTime: fTimerValue);
     }
     

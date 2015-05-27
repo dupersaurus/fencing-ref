@@ -19,7 +19,7 @@ class BoutTimerViewController : UIViewController {
         m_cbHalt = callback;
     }
     
-    func setBoutTime(fTime:Float) {
+    func setBoutTime(fTime:NSTimeInterval) {
         m_timerLabel.text = Timer.getTimeString(timeInSeconds: fTime);
     }
     

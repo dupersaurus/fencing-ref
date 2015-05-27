@@ -274,7 +274,7 @@ public class BoutViewController: UIViewController {
     }
     
     /** Start running the generic modal timer */
-    func startModalTimer(time fTime:Float, title sTitle:String, onClose cbClose:(Void->Void)) {
+    func startModalTimer(time fTime:NSTimeInterval, title sTitle:String, onClose cbClose:(Void->Void)) {
         
         if m_timerModal == nil {
             m_timerModal = self.storyboard!.instantiateViewControllerWithIdentifier("modalTimer") as? ModalTimerViewController;
@@ -316,7 +316,7 @@ public class BoutViewController: UIViewController {
         m_bout?.resetToDefault();
     }
     
-    func setBoutTime(newTime fTime:Float) {
+    func setBoutTime(newTime fTime:NSTimeInterval) {
         m_bout?.currentTime = fTime;
     }
     
@@ -370,7 +370,7 @@ public class BoutViewController: UIViewController {
     
     :currentTime: The current time of the bout, in seconds
     */
-    func setCurrentTime(currentTime fCurrentTime:Float) {
+    func setCurrentTime(currentTime fCurrentTime:NSTimeInterval) {
         m_timerLabel?.text = Timer.getTimeString(timeInSeconds: fCurrentTime);
         m_boutTimerModal?.setBoutTime(fCurrentTime);
     }

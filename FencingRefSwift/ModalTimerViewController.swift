@@ -29,7 +29,7 @@ class ModalTimerViewController : UIViewController {
         m_continueButton.layer.cornerRadius = 15;
     }
     
-    func start(time fTime:Float, title sTitle:String, leftScore iLeftScore:UInt8, rightScore iRightScore:UInt8, onClose cbClose:(Void->Void)) {
+    func start(time fTime:NSTimeInterval, title sTitle:String, leftScore iLeftScore:UInt8, rightScore iRightScore:UInt8, onClose cbClose:(Void->Void)) {
         m_timer?.currentTime = fTime;
         m_timer?.start();
         m_cbClose = cbClose;
@@ -40,7 +40,7 @@ class ModalTimerViewController : UIViewController {
         m_timerLabel.text = Timer.getTimeString(timeInSeconds: fTime - 0.1);
     }
     
-    func onTimerTick(fTime:Float) {
+    func onTimerTick(fTime:NSTimeInterval) {
         m_timerLabel.text = Timer.getTimeString(timeInSeconds: fTime);
     }
     

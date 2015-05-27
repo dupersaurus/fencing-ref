@@ -124,7 +124,7 @@ public class Timer : NSObject {
         }
     }
     
-    static public func getTimeString(timeInSeconds fTime:Float) -> String {
+    static public func getTimeString(timeInSeconds fTime:NSTimeInterval) -> String {
         var sReturnString = "";
         let iHours:UInt = UInt(floor(fTime / 3600));
         let iMinutes:UInt = UInt(floor(fTime / 60));

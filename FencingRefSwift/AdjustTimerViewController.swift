@@ -26,7 +26,7 @@ class AdjustTimerViewController : UIViewController {
     }
     
     /** Set the vc up with a beginning time */
-    func setup(currentTime fTime:Float, bout:BoutViewController) {
+    func setup(currentTime fTime:NSTimeInterval, bout:BoutViewController) {
         
         m_boutVC = bout;
         m_timeLabel.text = Timer.getTimeString(timeInSeconds: fTime);
@@ -48,7 +48,7 @@ class AdjustTimerViewController : UIViewController {
         m_timeLabel.text = Timer.getTimeString(timeInSeconds: getTimeInSeconds());
     }
     
-    private func getTimeInSeconds() -> Float {
-        return Float(m_minuteStepper.value * 60 + m_secondStepper.value);
+    private func getTimeInSeconds() -> NSTimeInterval {
+        return NSTimeInterval(m_minuteStepper.value * 60 + m_secondStepper.value);
     }
 }
