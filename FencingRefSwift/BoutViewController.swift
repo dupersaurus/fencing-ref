@@ -312,7 +312,7 @@ public class BoutViewController: UIViewController {
     :boutType: The type of bout to spawn
     */
     func createNewBout(boutType:Bout.Type) {
-        m_bout = boutType(vc: self);
+        m_bout = boutType.init(vc: self);
         m_bout?.resetToDefault();
     }
     

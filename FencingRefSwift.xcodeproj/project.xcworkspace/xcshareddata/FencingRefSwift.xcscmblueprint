@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1BEF5B39950363CB41C9A52C0214531DFE6E6E1E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "11E4A14DE657962E959580CFD90EA146D53DDF28" : 0,
+    "1BEF5B39950363CB41C9A52C0214531DFE6E6E1E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BDED8863-77CC-40EB-957F-CADF0223DE7A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "11E4A14DE657962E959580CFD90EA146D53DDF28" : "FencingRefSwift\/FencingRefSwift\/fontawesome\/",
+    "1BEF5B39950363CB41C9A52C0214531DFE6E6E1E" : "FencingRefSwift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "FencingRefSwift",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "FencingRefSwift.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alexdrone\/ios-fontawesome.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "11E4A14DE657962E959580CFD90EA146D53DDF28"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dupersaurus\/rosencrantzisnotdead.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1BEF5B39950363CB41C9A52C0214531DFE6E6E1E"
+    }
+  ]
+}
