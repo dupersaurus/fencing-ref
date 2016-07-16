@@ -139,15 +139,12 @@
                                 <rect key="frame" x="16" y="324" width="115" height="120"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
                                 </accessibility>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="pYs-2h-pvs" appends="YES" id="Mrr-jd-SAP"/>
-                                    <outletCollection property="gestureRecognizers" destination="D4B-tN-fWN" appends="YES" id="WZO-Qi-ORk"/>
-                                </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUy-du-4KB" userLabel="Right Score">
                                 <rect key="frame" x="189" y="324" width="115" height="120"/>
@@ -155,10 +152,6 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="SeX-eI-3Jj" appends="YES" id="Pxv-1x-Tj7"/>
-                                    <outletCollection property="gestureRecognizers" destination="lEh-57-nal" appends="YES" id="cWn-iw-s90"/>
-                                </connections>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5p-1S-fcD" userLabel="Right Current Card">
                                 <rect key="frame" x="159" y="447" width="161" height="26"/>

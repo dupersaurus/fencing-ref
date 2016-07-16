@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         //view = phoneView;
         
         let storyboard = UIStoryboard(name: "device4in", bundle: nil);
-        let deviceVC = storyboard.instantiateViewControllerWithIdentifier("boutVC") as! UIViewController;
-        var delegate:UIApplicationDelegate? = UIApplication.sharedApplication().delegate;
+        let deviceVC = storyboard.instantiateViewControllerWithIdentifier("boutVC") ;
+        let delegate:UIApplicationDelegate? = UIApplication.sharedApplication().delegate;
         delegate?.window??.rootViewController = deviceVC;
         
         

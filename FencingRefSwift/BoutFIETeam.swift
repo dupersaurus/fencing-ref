@@ -26,7 +26,7 @@ public class BoutFIETeam : Bout {
     }
     
     override public func periodBreakComplete() {
-        currentPeriod++;
+        currentPeriod += 1;
         pointTarget = 5 * currentPeriod;
         m_viewController.setFencingToScore(score: pointTarget);
         

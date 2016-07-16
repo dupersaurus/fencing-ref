@@ -25,7 +25,7 @@ public class Bout10Touch : Bout {
     }
     
     override public func periodBreakComplete() {
-        currentPeriod++;
+        currentPeriod += 1;
         
         if currentPeriod <= 2 {
             m_viewController.setPeriodLabel(labelText: "Period \(currentPeriod)");

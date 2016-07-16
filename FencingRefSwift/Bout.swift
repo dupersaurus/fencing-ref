@@ -62,7 +62,7 @@ public class Bout {
                 }
                 
                 if (m_leftCard == Card.Red) {
-                    m_iRightScore++;
+                    m_iRightScore += 1;
                 }
             }
         }
@@ -78,7 +78,7 @@ public class Bout {
                 }
                 
                 if (m_rightCard == Card.Red) {
-                    m_iLeftScore++;
+                    m_iLeftScore += 1;
                 }
             }
         }
@@ -232,7 +232,7 @@ public class Bout {
     Score touch for fencer on the left
     */
     public func touchLeft() {
-        m_boutData.leftScore++;
+        m_boutData.leftScore += 1;
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         
         recordBoutEvent("Left scores");
@@ -241,7 +241,7 @@ public class Bout {
     }
     
     public func reverseTouchLeft() {
-        m_boutData.leftScore--;
+        m_boutData.leftScore -= 1;
         m_viewController.setLeftScore(score: m_boutData.leftScore);
     }
     
@@ -249,7 +249,7 @@ public class Bout {
     Score touch for fencer on the right 
     */
     public func touchRight() {
-        m_boutData.rightScore++;
+        m_boutData.rightScore += 1;
         m_viewController.setRightScore(score: m_boutData.rightScore);
         
         recordBoutEvent("Right scores");
@@ -258,7 +258,7 @@ public class Bout {
     }
     
     public func reverseTouchRight() {
-        m_boutData.rightScore--;
+        m_boutData.rightScore -= 1;
         m_viewController.setRightScore(score: m_boutData.rightScore);
     }
     
@@ -266,8 +266,8 @@ public class Bout {
     Score a double touch, if allowed by the bout type 
     */
     public func touchDouble() {
-        m_boutData.leftScore++;
-        m_boutData.rightScore++;
+        m_boutData.leftScore += 1;
+        m_boutData.rightScore += 1;
         
         m_viewController.setLeftScore(score: m_boutData.leftScore);
         m_viewController.setRightScore(score: m_boutData.rightScore);
@@ -339,8 +339,8 @@ public class Bout {
     :sMessage: The message to record. Timestamp and scores are automatically added.
     */
     private func recordBoutEvent(sMessage:String) {
-        var time:NSTimeInterval? = m_timer?.currentTime;
-        var event:BoutEvent = BoutEvent(time: time!, leftScore: m_boutData.leftScore, rightScore: m_boutData.rightScore, sMessage: sMessage);
+        let time:NSTimeInterval? = m_timer?.currentTime;
+        let event:BoutEvent = BoutEvent(time: time!, leftScore: m_boutData.leftScore, rightScore: m_boutData.rightScore, sMessage: sMessage);
         m_boutEvents.append(event);
     }
     

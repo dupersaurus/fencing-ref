@@ -87,7 +87,7 @@ public class Timer : NSObject {
             return;
         }
         
-        m_timer = NSTimer.scheduledTimerWithTimeInterval(m_fTickInterval, target: self, selector: Selector("timerTick:"), userInfo: nil, repeats: true);
+        m_timer = NSTimer.scheduledTimerWithTimeInterval(m_fTickInterval, target: self, selector: #selector(Timer.timerTick(_:)), userInfo: nil, repeats: true);
     }
     
     /** Stop the timer */
@@ -126,8 +126,8 @@ public class Timer : NSObject {
     
     static public func getTimeString(timeInSeconds fTime:NSTimeInterval) -> String {
         var sReturnString = "";
-        let iHours:UInt = UInt(floor(fTime / 3600));
-        let iMinutes:UInt = UInt(floor(fTime / 60) % 60);
+        let iHours:UInt = fTime > 0 ? UInt(floor(fTime / 3600)) : 0;
+        let iMinutes:UInt = fTime > 0 ? UInt(floor(fTime / 60) % 60) : 0;
         let fSeconds = fTime % 60;
         
         let sMinutesString:String = iHours > 0 && iMinutes < 10 ? "0\(iMinutes)" : "\(iMinutes)";

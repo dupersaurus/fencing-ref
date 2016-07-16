@@ -100,6 +100,9 @@ public class BoutViewController: UIViewController {
         m_rightYellowCard.layer.cornerRadius = 5;
         m_rightRedCard.layer.cornerRadius = 5;
         
+        m_leftScoreLabel.userInteractionEnabled = false
+        m_rightScoreLabel.userInteractionEnabled = false
+        
         setPriorityDisplay(left: false, right: false);
         
         wantPriority(false);
